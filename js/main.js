@@ -14,7 +14,6 @@ loadComponent("sidebar", "components/sidebar.html");
 loadComponent("main-content", "pages/incidentDetails.html");
 
 
-
 // ****************************************************************** //
 // Notes functions //
 // ****************************************************************** //
@@ -28,13 +27,12 @@ function loadNote(noteId) {
 
   fetch(notePath)
     .then(res => {
-      if (!res.ok) {
-        throw new Error("Note not found"); // triggers fallback
-      }
+      if (!res.ok) throw new Error("Note not found");
       return res.text();
     })
     .then(html => {
       notesContainer.innerHTML = html;
+      injectCloseButton(); // inject the lil’ "x"
       openNotePanel();
     })
     .catch((err) => {
@@ -47,6 +45,7 @@ function loadNote(noteId) {
         })
         .then(html => {
           notesContainer.innerHTML = html;
+          injectCloseButton(); // also inject on fallback
           openNotePanel();
         })
         .catch(err => {
@@ -57,9 +56,25 @@ function loadNote(noteId) {
               <p>Even the fallback note went walkabout, bro. Might wanna check your file paths.</p>
             </div>
           `;
+          injectCloseButton(); // still inject it, man
           openNotePanel();
         });
     });
+}
+
+function injectCloseButton() {
+  const notesContainer = document.getElementById('notes-container');
+  if (!notesContainer) return;
+
+  const existingBtn = notesContainer.querySelector('.close-note-btn');
+  if (existingBtn) return; // no duplicates, man
+
+  const closeBtn = document.createElement('button');
+  closeBtn.textContent = '×';
+  closeBtn.classList.add('close-note-btn');
+  closeBtn.onclick = closeNotePanel;
+
+  notesContainer.prepend(closeBtn);
 }
 
 function openNotePanel() {
@@ -69,9 +84,9 @@ function openNotePanel() {
   }
 }
 
-// Optional: Close button handler if your note panel has one
-document.addEventListener('click', (e) => {
-  if (e.target.classList.contains('close-note')) {
-    document.getElementById('notes-panel')?.classList.remove('open');
+function closeNotePanel() {
+  const panel = document.getElementById('notes-panel');
+  if (panel) {
+    panel.classList.remove('open');
   }
-});
+}
