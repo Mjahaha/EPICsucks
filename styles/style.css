@@ -6,45 +6,119 @@
 }
 
 body {
-  font-family: sans-serif;
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
+  font-family: "Arial", "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 16px;
+  background-color: #E8EAEF;
+  margin: 0;
+  padding: 0;
 }
 
+/* ************************************************* */
 /* NAVBAR */
+nav {
+  width: 100%;
+  display: block; /* just to be safe */
+}
+
 #navbar {
+  height: 50px;
+  background-color: #263174;
+  color: white;
+  display: flex;
+  align-items: center;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 50px;
-  background-color: #222;
-  color: white;
-  display: flex;
-  align-items: center;
-  padding-left: 1rem;
   z-index: 1000;
 }
 
+#navWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box; /* Add this line */
+  padding: 0 1.5rem;
+}
+
+#navTitle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 50px;
+}
+
+#navTitle img {
+  height: 30px;
+  width: auto;
+  display: block;
+  padding-right: 25px;
+  padding-left: 35px;;
+}
+
+#navTitle h1 {
+  margin: 0;
+  font-size: 16px;
+  line-height: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+
+/* ************************************************* */
 /* SIDEBAR */
 #sidebar {
   position: fixed;
   top: 50px;
   left: 0;
-  width: 200px;
+  width: 230px;
   height: calc(100vh - 50px);
-  background-color: #333;
-  color: white;
+  padding: 20px;
+  background-color: #263174;
+  color: #fff;
   padding: 1rem;
   z-index: 999;
   overflow-y: auto;
+  border-right: 1px solid #cccccc !important;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  box-sizing: border-box;
+}
+
+#sidebar a {
+  color: #fff;
+  font-size: 16px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+#sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px;
+}
+
+#sidebar ul li {
+  margin: 14px;
+  height: 47px;
+}
+
+
+#main-content {
+  flex-grow: 1;
+  margin-top: 50px;
+  overflow-y: auto;
+  padding: 1rem;
+  box-sizing: border-box;
 }
 
 /* MAIN CONTENT */
 #main-content.scroll-zone {
   margin-top: 50px;
-  margin-left: 200px;
+  margin-left: 230px;
   padding: 1rem;
   height: calc(100vh - 50px);
   overflow-y: auto;
