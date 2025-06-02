@@ -11,7 +11,7 @@ function loadComponent(id, file) {
 // Load layout pieces
 loadComponent("navbar", "components/navbar.html");
 loadComponent("sidebar", "components/sidebar.html");
-loadComponent("main-content", "pages/incidentDetails.html");
+loadComponent("main-content", "pages/myWork.html");
 
 
 // ****************************************************************** //
