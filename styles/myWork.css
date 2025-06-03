@@ -82,7 +82,7 @@ body {
 }
 
 .grid-table tr:nth-child(even) {
-    background-color: #f8f9fa;
+    background-color: #e7e8e9;
 }
 
 .grid-table tr:hover {
