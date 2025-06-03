@@ -120,7 +120,6 @@ nav {
   padding: 0px;
   background-color: #263174;
   color: #fff;
-  padding: 1rem;
   z-index: 999;
   overflow-y: auto;
   border-right: 1px solid #cccccc !important;
@@ -138,6 +137,7 @@ nav {
   font-family: 'Open Sans', sans-serif;
   font-weight: 700;
   text-decoration: none;
+  margin: 1rem;
 }
 
 #sidebar ul {
@@ -149,10 +149,13 @@ nav {
 }
 
 #sidebar ul li {
-  margin: 4px;
+  margin: 4px 0px;
   height: 47px;
 }
-
+#sidebar ul li:hover {
+    background-color: #263147;
+    transition: background-color 0.2s ease;
+}
 
 
 .icon-wrap {
