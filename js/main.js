@@ -1,5 +1,3 @@
-
-
 function loadComponent(id, file) {
   fetch(file)
     .then(res => res.text())
@@ -8,10 +6,50 @@ function loadComponent(id, file) {
     });
 }
 
+function loadPage(file) {
+  const id = "main-content";
+  fetch(`pages/${file}.html`)
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById(id).innerHTML = data;
+
+      // Try to load matching CSS file from styles/[id].css
+      const cssPath = `styles/${file}.css`;
+      console.log(cssPath);
+
+      // Clean up old dynamic style if any
+      const oldLink = document.getElementById(`dynamic-style-${id}`);
+      if (oldLink) {
+        oldLink.remove();
+      }
+
+      // Check if the CSS file exists without throwing a fit
+      fetch(cssPath, { method: 'HEAD' })
+        .then(res => {
+          console.log(res);
+          if (res.ok) {
+            const link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = cssPath;
+            link.id = `dynamic-style-${id}`;
+            document.head.appendChild(link);
+          } else {
+            // It's cool man, no CSS needed
+            console.log(`🧘 No styles found for #${id}, all good.`);
+          }
+        })
+        .catch(err => {
+          // Still chill if fetch bombs out
+          console.log(`🌈 Couldn't check styles for #${id}, but we move on.`);
+        });
+    });
+}
+
+
 // Load layout pieces
 loadComponent("navbar", "components/navbar.html");
 loadComponent("sidebar", "components/sidebar.html");
-loadComponent("main-content", "pages/myWork.html");
+loadPage("myWork");
 
 
 // ****************************************************************** //

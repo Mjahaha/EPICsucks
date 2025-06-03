@@ -1,0 +1,191 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    background-color: #E8EAEF;
+    margin: 0;
+}
+
+.grid-container {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.grid-table {
+    width: 95%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin: 40px 20px;
+}
+
+.grid-table th {
+    background-color: rgb(0, 125, 173);
+    border-bottom: 2px solid #dee2e6;
+    border-right: 1px solid #dee2e6;
+    padding: 12px 8px;
+    text-align: left;
+    font-weight: bold;
+    color: #ffffff;
+    position: relative;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.grid-table th:hover {
+    background-color: #e9ecef;
+}
+
+.grid-table th:last-child {
+    border-right: none;
+}
+
+.grid-table th .sort-icon,
+.grid-table th .filter-icon {
+    float: right;
+    margin-left: 8px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.grid-table th .filter-icon {
+    margin-left: 4px;
+    color: #007bff;
+    font-size: 12px;
+}
+
+/* Hover glow */
+.grid-table th:hover .sort-icon,
+.grid-table th:hover .filter-icon {
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.6);
+}
+
+/* Click scale effect */
+.grid-table th:active .sort-icon,
+.grid-table th:active .filter-icon {
+    transform: scale(0.9);
+}
+
+.grid-table td {
+    padding: 10px 8px;
+    border-bottom: 1px solid #dee2e6;
+    border-right: 1px solid #dee2e6;
+    vertical-align: middle;
+}
+
+.grid-table td:last-child {
+    border-right: none;
+}
+
+.grid-table tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+.grid-table tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+.grid-table tr:hover {
+    background-color: #e3f2fd;
+}
+
+.case-link {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover glow */
+.case-link:hover {
+    text-decoration: underline;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.6);
+}
+
+/* Click scale effect */
+.case-link:active {
+    transform: scale(0.95);
+}
+
+.status-open {
+    color: #28a745;
+    font-weight: bold;
+}
+
+.status-pending {
+    color: #ffc107;
+    font-weight: bold;
+}
+
+.urgent-col {
+    width: 8%;
+    text-align: center;
+}
+
+.case-name-col {
+    width: 24%;
+}
+
+.epa-name-col {
+    width: 14%;
+}
+
+.date-col {
+    width: 12%;
+}
+
+.incident-col {
+    width: 12%;
+}
+
+.caution-col {
+    width: 12%;
+    text-align: center;
+}
+
+.status-col {
+    width: auto;
+}
+
+.caution-yes {
+    color: #dc3545;
+    font-weight: bold;
+}
+
+.caution-no {
+    color: #6c757d;
+}
+
+.pagination {
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-top: 1px solid #dee2e6;
+    text-align: center;
+}
+
+.pagination a {
+    color: #007bff;
+    text-decoration: none;
+    padding: 5px 10px;
+    margin: 0 5px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover glow */
+.pagination a:hover {
+    text-decoration: underline;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.6);
+}
+
+/* Click scale effect */
+.pagination a:active {
+    transform: scale(0.95);
+}
+
+.table-title {
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+    font-weight: bold;
+    color: #495057;
+}

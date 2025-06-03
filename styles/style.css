@@ -13,6 +13,49 @@ body {
   padding: 0;
 }
 
+
+/* ************************************************* */
+/* MAIN CONTENT */
+#main-content {
+  flex-grow: 1;
+  margin-top: 50px;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+#main-content.scroll-zone {
+  margin-top: 50px;
+  margin-left: 230px;
+  height: calc(100vh - 50px);
+  overflow-y: auto;
+}
+
+.pageHeading {
+  display: block;
+  width: 100%;
+  height: 52px;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 16px;
+  box-sizing: border-box;
+  flex-basis: auto;
+  flex-grow: 1;
+  flex-shrink: 1;
+  outline-style: none;
+  outline-width: 0px;
+  unicode-bidi: isolate;
+  word-spacing: normal;
+  white-space-collapse: collapse; /* Note: Not fully supported, just for vibes */
+  text-wrap: wrap; /* Modern version of text-wrap-mode */
+  padding: 1rem;
+  background-color: rgb(230, 237, 255);
+  color: rgb(38, 49, 116);
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 10px -2px rgba(0, 0, 0, 0.1);
+}
+
+
+
 /* ************************************************* */
 /* NAVBAR */
 nav {
@@ -128,21 +171,4 @@ nav {
 
 .link-text {
   flex: 1;
-}
-
-/* ************************************************* */
-/* MAIN CONTENT */
-#main-content {
-  flex-grow: 1;
-  margin-top: 50px;
-  overflow-y: auto;
-  box-sizing: border-box;
-}
-
-#main-content.scroll-zone {
-  margin-top: 50px;
-  margin-left: 230px;
-  padding: 1rem;
-  height: calc(100vh - 50px);
-  overflow-y: auto;
 }
