@@ -52,13 +52,23 @@ function loadPage(file) {
               const script = document.createElement('script');
               script.src = jsPath;
               script.defer = true;
+              script.onload = () => {
+                console.log(`🧠 Script ${jsPath} loaded.`);
+                if (typeof renderCaseNotes === "function") {
+                  renderCaseNotes();
+                }
+              };
               document.body.appendChild(script);
-              console.log(`🧠 Loaded script: ${jsPath}`);
+            } else {
+              // Already there, give it a shot
+              if (typeof renderCaseNotes === "function") {
+                renderCaseNotes();
+              }
             }
-          } 
+          }
         })
         .catch(err => {
-          console.log(`💥 JS check failed for ${file}, still cruising.`);
+          console.log(`💥 JS check failed for ${file}, still cruising.`, err);
         });
     })
     .catch(err => {
@@ -66,7 +76,6 @@ function loadPage(file) {
       console.error(`💀 Big oof loading page ${file}:`, err);
     });
 }
-
 
 
 // Load layout pieces
