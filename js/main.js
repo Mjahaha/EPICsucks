@@ -8,42 +8,65 @@ function loadComponent(id, file) {
 
 function loadPage(file) {
   const id = "main-content";
-  fetch(`pages/${file}.html`)
-    .then(res => res.text())
+  const htmlPath = `pages/${file}.html`;
+  const cssPath = `styles/${file}.css`;
+  const jsPath = `js/${file}.js`;
+
+  // Load the HTML content
+  fetch(htmlPath)
+    .then(res => {
+      if (!res.ok) throw new Error(`🚫 Couldn't fetch HTML for ${file}`);
+      return res.text();
+    })
     .then(data => {
       document.getElementById(id).innerHTML = data;
 
-      // Try to load matching CSS file from styles/[id].css
-      const cssPath = `styles/${file}.css`;
-      console.log(cssPath);
-
-      // Clean up old dynamic style if any
-      const oldLink = document.getElementById(`dynamic-style-${id}`);
-      if (oldLink) {
-        oldLink.remove();
-      }
-
-      // Check if the CSS file exists without throwing a fit
+      // 🌈 Add CSS file if not already present
       fetch(cssPath, { method: 'HEAD' })
         .then(res => {
-          console.log(res);
           if (res.ok) {
-            const link = document.createElement('link');
-            link.rel = 'stylesheet';
-            link.href = cssPath;
-            link.id = `dynamic-style-${id}`;
-            document.head.appendChild(link);
+            const existing = [...document.querySelectorAll('link[rel="stylesheet"]')]
+              .some(link => link.href.includes(cssPath));
+            if (!existing) {
+              const link = document.createElement('link');
+              link.rel = 'stylesheet';
+              link.href = cssPath;
+              document.head.appendChild(link);
+              console.log(`🎨 Added style: ${cssPath}`);
+            }
           } else {
-            // It's cool man, no CSS needed
-            console.log(`🧘 No styles found for #${id}, all good.`);
+            console.log(`🧘 No styles found for ${file}, all good.`);
           }
         })
         .catch(err => {
-          // Still chill if fetch bombs out
-          console.log(`🌈 Couldn't check styles for #${id}, but we move on.`);
+          console.log(`🌈 Couldn't check styles for ${file}, but we move on.`);
         });
+
+      // 🤙 Add JS file if not already present
+      fetch(jsPath, { method: 'HEAD' })
+        .then(res => {
+          if (res.ok) {
+            const existingScript = [...document.querySelectorAll('script')]
+              .some(script => script.src.includes(jsPath));
+            if (!existingScript) {
+              const script = document.createElement('script');
+              script.src = jsPath;
+              script.defer = true;
+              document.body.appendChild(script);
+              console.log(`🧠 Loaded script: ${jsPath}`);
+            }
+          } 
+        })
+        .catch(err => {
+          console.log(`💥 JS check failed for ${file}, still cruising.`);
+        });
+    })
+    .catch(err => {
+      document.getElementById(id).innerHTML = `<p style="color:red;">Failed to load ${file}, bro 😞</p>`;
+      console.error(`💀 Big oof loading page ${file}:`, err);
     });
 }
+
 
 
 // Load layout pieces
