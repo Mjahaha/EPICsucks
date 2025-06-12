@@ -1,0 +1,37 @@
+.tab-ribbon {
+  display: flex;
+  gap: 4px;
+  padding: 0;
+  margin-bottom: -1px;
+}
+
+.tab {
+  padding: 10px 20px;
+  background-color: #dee2e6;
+  border: 1px solid #adb5bd;
+  border-bottom: none;
+  border-radius: 4px 4px 0 0;
+  cursor: pointer;
+  font-weight: bold;
+  color: #495057;
+  transition: background-color 0.2s ease;
+}
+
+.tab:hover {
+  background-color: #ced4da;
+}
+
+.tab.active {
+  background-color: #ffffff;
+  border-bottom: 1px solid #ffffff;
+  position: relative;
+  z-index: 1;
+}
+
+.tab-content {
+  border: 1px solid #adb5bd;
+  border-radius: 0 4px 4px 4px;
+  padding: 20px;
+  background-color: #ffffff;
+  min-height: 300px;
+}
