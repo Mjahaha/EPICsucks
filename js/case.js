@@ -1,10 +1,40 @@
+// ****************************************************************** //
+// Switch Tab function for tabs in cases //
+// ****************************************************************** //
+
+/*
 const loadCaseTabContent = () => {
     const caseTabContent = document.getElementById('case-tab-content');
     caseTabContent.innerHTML = `<p>Loading case details...</p>`;
     console.log("Loading case tab content...");
 }
-
 loadCaseTabContent();
+*/
+
+function switchTab(tabName) {
+  const tabContent = document.getElementById("case-tab-content");
+  if (!tabContent) {
+    console.warn("🚫 Tab content container not found, bro.");
+    return;
+  }
+
+  const tabPath = `pages/caseTabs/${tabName}.html`;
+
+  fetch(tabPath)
+    .then(res => {
+      if (!res.ok) throw new Error(`Couldn't fetch tab: ${tabName}`);
+      return res.text();
+    })
+    .then(html => {
+      tabContent.innerHTML = html;
+      console.log(`🌀 Loaded tab: ${tabName}`);
+    })
+    .catch(err => {
+      tabContent.innerHTML = `<p style="color:red;">Couldn't load "${tabName}" tab, man. Check your vibes or your files 🤷‍♂️</p>`;
+      console.error(`💀 Tab load failed (${tabName}):`, err);
+    });
+}
+
 
 // ****************************************************************** //
 // Case Notes code //

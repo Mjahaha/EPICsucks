@@ -5,14 +5,12 @@ function loadComponent(id, file) {
       document.getElementById(id).innerHTML = data;
     });
 }
-
 function loadPage(file) {
   const id = "main-content";
   const htmlPath = `pages/${file}.html`;
   const cssPath = `styles/${file}.css`;
   const jsPath = `js/${file}.js`;
 
-  // Load the HTML content
   fetch(htmlPath)
     .then(res => {
       if (!res.ok) throw new Error(`🚫 Couldn't fetch HTML for ${file}`);
@@ -21,13 +19,13 @@ function loadPage(file) {
     .then(data => {
       document.getElementById(id).innerHTML = data;
 
-      // 🌈 Add CSS file if not already present
+      // 🌈 CSS file loading
       fetch(cssPath, { method: 'HEAD' })
         .then(res => {
           if (res.ok) {
-            const existing = [...document.querySelectorAll('link[rel="stylesheet"]')]
+            const exists = [...document.querySelectorAll('link[rel="stylesheet"]')]
               .some(link => link.href.includes(cssPath));
-            if (!existing) {
+            if (!exists) {
               const link = document.createElement('link');
               link.rel = 'stylesheet';
               link.href = cssPath;
@@ -42,13 +40,13 @@ function loadPage(file) {
           console.log(`🌈 Couldn't check styles for ${file}, but we move on.`);
         });
 
-      // 🤙 Add JS file if not already present
+      // 🧠 JS file loading
       fetch(jsPath, { method: 'HEAD' })
         .then(res => {
           if (res.ok) {
-            const existingScript = [...document.querySelectorAll('script')]
+            const exists = [...document.querySelectorAll('script')]
               .some(script => script.src.includes(jsPath));
-            if (!existingScript) {
+            if (!exists) {
               const script = document.createElement('script');
               script.src = jsPath;
               script.defer = true;
@@ -57,12 +55,17 @@ function loadPage(file) {
                 if (typeof renderCaseNotes === "function") {
                   renderCaseNotes();
                 }
+                if (file === "case" && typeof switchTab === "function") {
+                  switchTab("Details");
+                }
               };
               document.body.appendChild(script);
             } else {
-              // Already there, give it a shot
               if (typeof renderCaseNotes === "function") {
                 renderCaseNotes();
+              }
+              if (file === "case" && typeof switchTab === "function") {
+                switchTab("Details");
               }
             }
           }
