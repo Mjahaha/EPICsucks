@@ -5,6 +5,7 @@ function loadComponent(id, file) {
       document.getElementById(id).innerHTML = data;
     });
 }
+
 function loadPage(file) {
   const id = "main-content";
   const htmlPath = `pages/${file}.html`;
