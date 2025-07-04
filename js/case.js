@@ -1,40 +1,3 @@
-// ****************************************************************** //
-// Switch Tab function for tabs in cases //
-// ****************************************************************** //
-
-/*
-const loadCaseTabContent = () => {
-    const caseTabContent = document.getElementById('case-tab-content');
-    caseTabContent.innerHTML = `<p>Loading case details...</p>`;
-    console.log("Loading case tab content...");
-}
-loadCaseTabContent();
-*/
-
-function switchTab(tabName) {
-  const tabContent = document.getElementById("case-tab-content");
-  if (!tabContent) {
-    console.warn("🚫 Tab content container not found, bro.");
-    return;
-  }
-
-  const tabPath = `pages/caseTabs/${tabName}.html`;
-
-  fetch(tabPath)
-    .then(res => {
-      if (!res.ok) throw new Error(`Couldn't fetch tab: ${tabName}`);
-      return res.text();
-    })
-    .then(html => {
-      tabContent.innerHTML = html;
-      console.log(`🌀 Loaded tab: ${tabName}`);
-    })
-    .catch(err => {
-      tabContent.innerHTML = `<p style="color:red;">Couldn't load "${tabName}" tab, man. Check your vibes or your files 🤷‍♂️</p>`;
-      console.error(`💀 Tab load failed (${tabName}):`, err);
-    });
-}
-
 
 // ****************************************************************** //
 // Case Notes code //
@@ -142,4 +105,128 @@ function handleAddNote() {
 
   addCaseNote("James Pridgeon", text);
   input.value = ""; // Clear after adding
+}
+
+// ****************************************************************** //
+// Incident Details functions //
+// ****************************************************************** //
+
+let caseDetails = {
+  siteName: "Moonlight Quarry",
+  siteType: "Agricultural"
+};
+
+function populateDetails() {
+  Object.keys(caseDetails).forEach(key => {
+    const el = document.querySelector(`[data-key="${key}"]`);
+    if (el) {
+      if (el.tagName === "INPUT" || el.tagName === "TEXTAREA") {
+        el.value = caseDetails[key];
+      } else if (el.tagName === "SELECT") {
+        const valueToSelect = caseDetails[key];
+
+        // If that option isn't in the dropdown, add it
+        let optionExists = [...el.options].some(opt => opt.value === valueToSelect);
+        if (!optionExists) {
+          const newOption = document.createElement("option");
+          newOption.value = valueToSelect;
+          newOption.textContent = valueToSelect;
+          el.appendChild(newOption);
+        }
+
+        el.value = valueToSelect;
+      }
+    }
+  });
+}
+
+
+function saveDetails() {
+  Object.keys(caseDetails).forEach(key => {
+    const el = document.querySelector(`[data-key="${key}"]`);
+    if (el) {
+      caseDetails[key] = el.value;
+    }
+  });
+}
+
+function enableEditMode() {
+  const fields = document.querySelectorAll('[data-key]');
+  fields.forEach(el => {
+    if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+      el.removeAttribute('readonly');
+      el.style.backgroundColor = "#fff";
+    } else if (el.tagName === 'SELECT') {
+      el.removeAttribute('disabled');
+    }
+  });
+
+  const btnContainer = document.getElementById('edit-button-container');
+  btnContainer.innerHTML = `
+    <button class="action-btn save" onclick="handleSave()">💾 Save</button>
+    <button class="action-btn discard" onclick="handleDiscard()">↩ Discard</button>
+  `;
+}
+
+function disableEditMode() {
+  const fields = document.querySelectorAll('[data-key]');
+  fields.forEach(el => {
+    if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+      el.setAttribute('readonly', true);
+      el.style.backgroundColor = "#eee";
+    } else if (el.tagName === 'SELECT') {
+      el.setAttribute('disabled', true);
+    }
+  });
+
+  const btnContainer = document.getElementById('edit-button-container');
+  btnContainer.innerHTML = `
+    <button class="action-btn edit" onclick="enableEditMode()">✏️ Edit</button>
+  `;
+}
+
+function handleSave() {
+  saveDetails();
+  disableEditMode();
+}
+
+function handleDiscard() {
+  populateDetails();
+  disableEditMode();
+}
+
+
+
+// ****************************************************************** //
+// Switch Tab function for tabs in cases //
+// ****************************************************************** //
+
+function switchTab(tabName) {
+  const tabContent = document.getElementById("case-tab-content");
+  if (!tabContent) {
+    console.warn("🚫 Tab content container not found, bro.");
+    return;
+  }
+
+  const tabPath = `pages/caseTabs/${tabName}.html`;
+
+  fetch(tabPath)
+    .then(res => {
+      if (!res.ok) throw new Error(`Couldn't fetch tab: ${tabName}`);
+      return res.text();
+    })
+    .then(html => {
+      tabContent.innerHTML = html;
+      console.log(`🌀 Loaded tab: ${tabName}`);
+
+      // 🧠 This now runs after the HTML is loaded in
+      if (tabName === "Details" && typeof populateDetails === "function") {
+        console.log(`🌿 Populating details for tab: ${tabName}`);
+        populateDetails();
+      }
+    })
+    .catch(err => {
+      tabContent.innerHTML = `<p style="color:red;">Couldn't load "${tabName}" tab, man. Check your vibes or your files 🤷‍♂️</p>`;
+      console.error(`💀 Tab load failed (${tabName}):`, err);
+    });
 }
