@@ -18,7 +18,11 @@
 </section>
 
 <div id="case-notes-section">
-  <h3>Case Notes</h3>
+  <div style="display: flex; justify-content: space-between; align-items: center;">
+    <h3>Case Notes</h3>
+    <button id="toggleNotesLayout" onclick="toggleNotesPosition()" title="Toggle position"
+      style="background: none; border: none; font-size: 20px; cursor: pointer;">↖️↘️</button>
+  </div>
   <div id="case-notes"></div>
 
   <div id="add-note-section">

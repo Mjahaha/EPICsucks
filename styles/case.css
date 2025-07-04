@@ -116,6 +116,42 @@
   background-color: #0056b3;
 }
 
+#case-layout-wrapper {
+  display: block;
+}
+
+#case-notes-section.inline {
+  float: left;
+  width: 35%;
+  margin-right: 20px;
+  border-top: none;
+  border-right: 2px solid #dee2e6;
+  border-radius: 6px 0 0 6px;
+  padding: 15px;
+  background-color: #f9fafb;
+}
+
+#case-tab-content.inline-notes {
+  width: 65%;
+  float: right;
+}
+
+/* Clearfix for floats */
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#case-notes-section.inline {
+  margin: 0;
+  height: 100%;
+}
+
+#case-notes-section {
+  transition: margin 0.6s ease;
+}
+
 /* ************************************************* */
 /* Incident Details Tab */
 /* ************************************************* */
