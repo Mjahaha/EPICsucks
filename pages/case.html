@@ -20,9 +20,39 @@
 <div id="case-notes-section">
   <div style="display: flex; justify-content: space-between; align-items: center;">
     <h3>Case Notes</h3>
-    <button id="toggleNotesLayout" onclick="toggleNotesPosition()" title="Toggle position"
-      style="background: none; border: none; font-size: 20px; cursor: pointer;">↖️↘️</button>
+    <div>
+      <button id="sortNotes" onclick="loadNote(this.id)" title="Sort notes"
+        style="
+          background-color: #28a745;
+          border: none;
+          color: white;
+          padding: 8px 12px;
+          font-size: 18px;
+          cursor: pointer;
+          border-radius: 5px;
+          box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+          transition: background-color 0.2s ease;
+        ">
+        ⬆⬇
+      </button>
+      <button id="toggleNotesLayout" onclick="toggleNotesPosition()" title="Toggle position"
+      style="
+        background-color: #007bff;
+        border: none;
+        color: white;
+        padding: 8px 12px;
+        font-size: 18px;
+        cursor: pointer;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        transition: background-color 0.2s ease;
+      ">
+      ↖️↘️
+    </button>
+    
+    </div>
   </div>
+  
   <div id="case-notes"></div>
 
   <div id="add-note-section">
