@@ -6,8 +6,13 @@
 // 🌿 Dummy notes array
 let caseNotes = [
   {
+    author: "Jane EnviroLine",
+    time: "9 June 2025, 09:21",
+    text: "Created Incident"
+  },  
+  {
     author: "Ben Lewin",
-    time: "9 June 2025, 05:21",
+    time: "9 June 2025, 12:21",
     text: "Followed up on odour complaint. Resident reports strong chemical smell in the morning."
   },
   {
@@ -53,6 +58,28 @@ function addCaseNote(author, text) {
 
   renderCaseNotes();
 }
+
+
+let notesInline = false;
+
+function toggleNotesPosition() {
+  const notesSection = document.getElementById('case-notes-section');
+  const tabContent = document.getElementById('case-tab-content');
+
+  notesInline = !notesInline;
+
+  if (notesInline) {
+    notesSection.classList.add('inline');
+    tabContent.classList.add('inline-notes');
+  } else {
+    notesSection.classList.remove('inline');
+    tabContent.classList.remove('inline-notes');
+  }
+
+  console.log(`📐 Notes now ${notesInline ? "inline" : "below"} bro`);
+}
+
+
 
 renderCaseNotes();
 
@@ -229,4 +256,14 @@ function switchTab(tabName) {
       tabContent.innerHTML = `<p style="color:red;">Couldn't load "${tabName}" tab, man. Check your vibes or your files 🤷‍♂️</p>`;
       console.error(`💀 Tab load failed (${tabName}):`, err);
     });
+}
+
+
+// ****************************************************************** //
+// Actions dropdown in header //
+// ****************************************************************** //
+
+function toggleDropdown() {
+  const container = document.querySelector('.dropdown-container');
+  container.classList.toggle('open');
 }

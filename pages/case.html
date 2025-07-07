@@ -1,14 +1,26 @@
 <section>
     <div class="pageHeading">
+      <div>
         <img src="pages/images/case.png" />
         <h2>EPA-1234</h2>
+      </div>
+        <div class="dropdown-container">
+          <button class="dropdown-button" onclick="toggleDropdown()">Actions ▼</button>
+          <div class="dropdown-menu" id="actionsDropdown">
+            <div onclick="loadNote('note1')">Terminate Case</div>
+            <div onclick="loadNote('note2')">Clone</div>
+            <div onclick="loadNote('note3')">Refresh</div>
+          </div>
+        </div>
+  </div>
     </div>
     <div class="tab-ribbon">
+        <div class="tab" onclick="switchTab('Summary')">Summary</div>
         <div class="tab" onclick="switchTab('Details')">Incident Details</div>
         <div class="tab" onclick="switchTab('Location')">Location</div>
         <div class="tab" onclick="switchTab('POIs')">POIs / Vehicles</div>
         <div class="tab" onclick="switchTab('Documents')">Documents</div>
-        <div class="tab" onclick="switchTab('Files')">Files</div>
+        <div class="tab" onclick="switchTab('Files')">Attachments</div>
         <div class="tab" onclick="switchTab('Closure')">Closure</div>
     </div>
 
@@ -18,7 +30,42 @@
 </section>
 
 <div id="case-notes-section">
-  <h3>Case Notes</h3>
+  <div style="display: flex; justify-content: space-between; align-items: center;">
+    <h3>Case Notes</h3>
+    <div>
+      <button id="sortNotes" onclick="loadNote(this.id)" title="Sort notes"
+        style="
+          background-color: #28a745;
+          border: none;
+          color: white;
+          padding: 8px 12px;
+          font-size: 18px;
+          border-radius: 5px;
+          cursor: pointer;
+          box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+          transition: background-color 0.2s ease;
+        ">
+        ⬆⬇
+      </button>
+      <button id="toggleNotesLayout" onclick="toggleNotesPosition()" title="Toggle position"
+      style="
+        background-color: #007bff;
+        border: none;
+        color: white;
+        padding: 8px 12px;
+        font-size: 18px;
+        border-radius: 5px;
+        cursor: pointer;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        transition: background-color 0.2s ease;
+        font-weight: bold;
+      ">
+      ↖↘
+    </button>
+    
+    </div>
+  </div>
+  
   <div id="case-notes"></div>
 
   <div id="add-note-section">

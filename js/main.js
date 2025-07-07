@@ -57,7 +57,7 @@ function loadPage(file) {
                   renderCaseNotes();
                 }
                 if (file === "case" && typeof switchTab === "function") {
-                  switchTab("Details");
+                  switchTab("Summary");
                 }
               };
               document.body.appendChild(script);
@@ -66,7 +66,7 @@ function loadPage(file) {
                 renderCaseNotes();
               }
               if (file === "case" && typeof switchTab === "function") {
-                switchTab("Details");
+                switchTab("Summary");
               }
             }
           }
