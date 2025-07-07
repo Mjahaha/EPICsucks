@@ -139,9 +139,12 @@ function handleAddNote() {
 // ****************************************************************** //
 
 let caseDetails = {
-  siteName: "Moonlight Quarry",
-  siteType: "Agricultural"
+  siteName: "Bobs Landfill",
+  operationalArea: "General Operations",
+  dateDiscovered: "2024-06-01",
+  dateReported: "2024-06-10"
 };
+
 
 function populateDetails() {
   Object.keys(caseDetails).forEach(key => {
