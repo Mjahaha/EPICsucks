@@ -300,3 +300,9 @@ section #incidentDetailsSection {
   opacity: 0.95;
 }
 
+.headerWithButton {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
