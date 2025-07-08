@@ -139,10 +139,13 @@ function handleAddNote() {
 // ****************************************************************** //
 
 let caseDetails = {
-  siteName: "Bobs Landfill",
   operationalArea: "General Operations",
   dateDiscovered: "2024-06-01",
-  dateReported: "2024-06-10"
+  dateReported: "2024-06-10",
+  incidentType: "Air",
+  incidentSubtype: "SMOKE",
+  impact: "Human Health",
+  source: "MINE"
 };
 
 

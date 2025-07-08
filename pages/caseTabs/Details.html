@@ -1,12 +1,9 @@
-<section>
-  <h2>Incident Details</h2>
-  <div id="edit-button-container" style="text-align: right;">
-    <button class="action-btn edit" onclick="enableEditMode()">✏️ Edit</button>
-  </div>
-  
-  <div class="field">
-    <label for="siteName">Site Name</label>
-    <input type="text" id="siteName" data-key="siteName" readonly />
+<section id="incidentDetailsSection">
+  <div id="detailsTopRow">
+    <h2>Incident Details</h2>
+    <div id="edit-button-container" style="text-align: right;">
+      <button class="action-btn edit" onclick="enableEditMode()">✏️ Edit</button>
+    </div>
   </div>
 
   <div class="field">
@@ -30,11 +27,65 @@
     <input type="date" id="dateReported" data-key="dateReported" readonly />
   </div>
 
-  <div class="field">
+  <div class="field wide">
     <label for="incidentDescription">Incident Description</label>
-    <input type="text" id="siteName" data-key="siteName" readonly />
+    <textarea id="incidentDescription" data-key="incidentDescription" rows="4" readonly></textarea>
   </div>
   
+  <div class="field">
+    <label for="incidentType">Incident Type (T1)</label>
+    <select id="incidentType" data-key="incidentType" disabled>
+      <option value="Air">Air</option>
+      <option value="CDS">CDS</option>
+      <option value="Dangerous Goods">Dangerous Goods</option>
+      <option value="Forestry">Forestry</option>
+      <option value="HAZARDOUS MATERIALS AND WASTE">HAZARDOUS MATERIALS AND WASTE</option>
+      <option value="Land">Land</option>
+      <option value="Noise and vibration">Noise and vibration</option>
+      <option value="Pesticides">Pesticides</option>
+      <option value="Prohibited Plastics">Prohibited Plastics</option>
+      <option value="Radiation">Radiation</option>
+      <option value="Waste Dumping">Waste Dumping</option>
+      <option value="Water">Water</option>
+    </select>
+  </div>
 
+  <div class="field">
+    <label for="incidentSubtype">Incident Subtype (T2)</label>
+    <select id="incidentSubtype" data-key="incidentSubtype" disabled>
+      <option value="OTHER">OTHER</option>
+      <option value="GAS RELEASE">GAS RELEASE</option>
+      <option value="SMOKE">SMOKE</option>
+      <option value="ODOUR">ODOUR</option>
+      <option value="CHEMICAL">CHEMICAL</option>
+      <option value="PARTICULATES / DUST (PM/SOx/NOx)">PARTICULATES / DUST (PM/SOx/NOx)</option>
+    </select>
+  </div>
+
+  <div class="field">
+    <label for="impact">Impact (T3)</label>
+    <select id="impact" data-key="impact" disabled>
+      <option value="Human Health">Human Health</option>
+    </select>
+  </div>
+
+  <div class="field">
+    <label for="source">Source (T4)</label>
+    <select id="source" data-key="source" disabled>
+      <option value="AGRICULTURE">AGRICULTURE</option>
+      <option value="SEWAGE TREATMENT SYSTEM">SEWAGE TREATMENT SYSTEM</option>
+      <option value="MINE">MINE</option>
+      <option value="COUNCIL DEPOT">COUNCIL DEPOT</option>
+      <option value="OTHER">OTHER</option>
+      <option value="CSG/GAS INDUSTRY">CSG/GAS INDUSTRY</option>
+      <option value="TRANSPORT -PORT/MARITIME">TRANSPORT -PORT/MARITIME</option>
+      <option value="ELECTRICITY SUPPLY">ELECTRICITY SUPPLY</option>
+      <option value="FORESTRY-PUBLIC NATIVE FORESTRY">FORESTRY-PUBLIC NATIVE FORESTRY</option>
+      <option value="EVENT(MUSIC/FIREWORKS)">EVENT(MUSIC/FIREWORKS)</option>
+      <option value="QUARRY">QUARRY</option>
+      <option value="SEWAGE TREATMENT PLANT">SEWAGE TREATMENT PLANT</option>
+      <option value="TRANSPORT - RAIL">TRANSPORT - RAIL</option>
+    </select>
+  </div>
   
 </section>

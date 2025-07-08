@@ -208,11 +208,42 @@
 /* Incident Details Tab */
 /* ************************************************* */
 
+#detailsTopRow {
+  width: 100%;
+  display: inline;
+}
+
+section #incidentDetailsSection {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
 .field {
-  margin-bottom: 1rem;
+  flex: 1 1 300px; /* grow, shrink, basis */
   display: flex;
   flex-direction: column;
+  min-width: 250px;
   max-width: 400px;
+}
+
+.field.wide {
+  flex: 1 1 100%;
+  max-width: 100%;
+}
+
+.field textarea {
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  font-size: 1rem;
+  background-color: #f8f8f8;
+  resize: vertical;
+}
+
+.field textarea[readonly] {
+  background-color: #eee;
+  color: #666;
 }
 
 .field label {
