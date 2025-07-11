@@ -3,7 +3,7 @@
 // Case Notes code //
 // ****************************************************************** //
 
-// 🌿 Dummy notes array
+// 🌿 Case notes array
 let caseNotes = [
   {
     author: "Jane EnviroLine",
@@ -23,7 +23,7 @@ let caseNotes = [
   {
     author: "James Pridgeon",
     time: "12 June 2025, 05:21",
-    text: "A draft <b>Prevention Notice</b> was created <a href='#' class='case-link' onclick='loadPage('secondaryRecord')'>SR-123</a>."
+    text: "A draft <b>Prevention Notice</b> was created <a href='#' class='case-link' onclick='loadComponent('main-content', 'pages/dashboard.html')'>SR-123</a>."
   }
 ];
 

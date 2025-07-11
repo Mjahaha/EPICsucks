@@ -34,7 +34,7 @@ body {
 }
 
 .grid-table th:hover {
-    font-weight: 800;
+    color: #eeeeee;
 }
 
 .grid-table th:last-child {
