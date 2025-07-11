@@ -19,6 +19,11 @@ let caseNotes = [
     author: "Ben Lewin",
     time: "11 June 2025, 05:21",
     text: "Spoke to facility operator, advised they were cleaning a tank around 8 AM. Monitoring planned."
+  },
+  {
+    author: "James Pridgeon",
+    time: "12 June 2025, 05:21",
+    text: "A draft <b>Prevention Notice</b> was created <a href='#' class='case-link' onclick='loadPage('secondaryRecord')'>SR-123</a>."
   }
 ];
 
@@ -142,6 +147,7 @@ let caseDetails = {
   operationalArea: "General Operations",
   dateDiscovered: "2024-06-01",
   dateReported: "2024-06-10",
+  incidentDescription: "Smoke from mine operations affecting air quality.",
   incidentType: "Air",
   incidentSubtype: "SMOKE",
   impact: "Human Health",
