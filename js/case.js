@@ -23,7 +23,7 @@ let caseNotes = [
   {
     author: "James Pridgeon",
     time: "12 June 2025, 05:21",
-    text: "A draft <b>Prevention Notice</b> was created <a href='#' class='case-link' onclick='loadComponent('main-content', 'pages/dashboard.html')'>SR-123</a>."
+    text: `A draft <b>Prevention Notice</b> was created <a href="#" class="case-link" onclick="loadPage('secondaryRecord')">SR-123</a>.`
   }
 ];
 
@@ -34,7 +34,9 @@ function renderCaseNotes() {
 
   container.innerHTML = ""; // Clear old notes
 
-  caseNotes.forEach(note => {
+  let servedCaseNotes = [...caseNotes].reverse();
+
+  servedCaseNotes.forEach(note => {
     const noteDiv = document.createElement("div");
     noteDiv.className = "case-note";
 
@@ -84,6 +86,35 @@ function toggleNotesPosition() {
   console.log(`📐 Notes now ${notesInline ? "inline" : "below"} bro`);
 }
 
+// For closure tab, show final case note
+function renderFinalCaseNote() {
+  const container = document.getElementById("final-case-note-container");
+  if (!container) {
+    console.warn("Yo bro, no final-case-note-container on the page 🌪️");
+    return;
+  }
+
+  container.innerHTML = ""; // clear any old vibes
+
+  const finalNote = caseNotes[caseNotes.length - 1];
+  if (!finalNote) {
+    container.innerHTML = "<p>No case notes yet, my dude.</p>";
+    return;
+  }
+
+  const noteDiv = document.createElement("div");
+  noteDiv.className = "case-note";
+
+  noteDiv.innerHTML = `
+    <div class="note-meta">
+      <span class="note-author">${finalNote.author}</span>
+      <span class="note-time">${finalNote.time}</span>
+    </div>
+    <div class="note-text">${finalNote.text}</div>
+  `;
+
+  container.appendChild(noteDiv);
+}
 
 
 renderCaseNotes();
@@ -123,6 +154,7 @@ function addCaseNote(author, text) {
   });
 
   renderCaseNotes();
+  renderFinalCaseNote(); // Update final case note display
 }
 
 // 🧪 Hooked up to the button
@@ -235,7 +267,6 @@ function handleDiscard() {
 }
 
 
-
 // ****************************************************************** //
 // Switch Tab function for tabs in cases //
 // ****************************************************************** //
@@ -263,6 +294,12 @@ function switchTab(tabName) {
         console.log(`🌿 Populating details for tab: ${tabName}`);
         populateDetails();
       }
+      if (tabName === "Closure" && typeof populateDetails === "function") {
+        console.log(`🌿 Populating details for tab: ${tabName}`);
+        populateDetails();
+        renderFinalCaseNote();
+
+      }
     })
     .catch(err => {
       tabContent.innerHTML = `<p style="color:red;">Couldn't load "${tabName}" tab, man. Check your vibes or your files 🤷‍♂️</p>`;
@@ -279,3 +316,4 @@ function toggleDropdown() {
   const container = document.querySelector('.dropdown-container');
   container.classList.toggle('open');
 }
+

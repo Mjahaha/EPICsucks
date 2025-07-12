@@ -7,6 +7,8 @@
         <div class="dropdown-container">
           <button class="dropdown-button" onclick="toggleDropdown()">Actions ▼</button>
           <div class="dropdown-menu" id="actionsDropdown">
+            <div onclick="loadNote('note1')">View Audit Log</div>
+            <div onclick="loadNote('note1')">Relate Cases</div>
             <div onclick="loadNote('note1')">Terminate Case</div>
             <div onclick="loadNote('note2')">Clone</div>
             <div onclick="loadNote('note3')">Refresh</div>
@@ -65,11 +67,11 @@
     
     </div>
   </div>
-  
+    <div id="add-note-section">
+    <textarea id="new-note-text" placeholder="Add a new note..." rows="3"></textarea>
+    <button onclick="handleAddNote()" style="margin-bottom: 8px;">Save Note</button>
+  </div>
   <div id="case-notes"></div>
 
-  <div id="add-note-section">
-    <textarea id="new-note-text" placeholder="Add a new note..." rows="3"></textarea>
-    <button onclick="handleAddNote()">Save Note</button>
-  </div>
+
 </div>
