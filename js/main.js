@@ -164,3 +164,5 @@ function closeNotePanel() {
     panel.classList.remove('open');
   }
 }
+
+loadNote('welcome'); // Load the welcome note start
