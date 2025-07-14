@@ -1,6 +1,78 @@
 <section>
-    <h2>POIs</h2>
-    <p>Text and fields</p>
-    <h2>Vehicles</h2>
-    <p>Text and fields</p>
+  <h2>Persons of Interest (POIs)</h2>
+  <p>This section records people and organisations relevant to this case. These might be suspects, reporters, witnesses, or anyone else tied to the matter.</p>
+  <br>
+
+  <div class="headerWithButton">
+    <h3>POIs</h3>
+    <div id="edit-button-container" style="text-align: right;">
+      <button class="action-btn edit" onclick="loadNote('newPOINote')" style="background-color: #21b34b; color: #fff; border: none;">
+        <span style="color: #fff; font-weight: bold; font-size: 1.2em;">＋</span> Add POI
+      </button>
+    </div>
+  </div>
+
+  <table class="grid-table" style="margin-top: 10px;">
+    <thead style="background-color: #f1f3f5; color: #212529;">
+      <tr>
+        <th>Name</th>
+        <th>Category</th>
+        <th>Type</th>
+        <th>Licence Number</th>
+        <th>Licence Type</th>
+        <th>Address</th>
+        <th>Related Cases</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Bovine Services</td>
+        <td>Suspect</td>
+        <td>EPL</td>
+        <td>123</td>
+        <td>EPL</td>
+        <td>475–479 Gestingthorpe Rd, Cow Flat Plains NSW 2782</td>
+        <td><a href="#" class="case-link">View</a></td>
+      </tr>
+      <tr>
+        <td>Miles Angry</td>
+        <td>Reporter</td>
+        <td>Individual</td>
+        <td>-</td>
+        <td>-</td>
+        <td>15 Spiteful Ln, Cow Flat Plains NSW 3001</td>
+        <td><a href="#" class="case-link">View</a></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <br><br>
+  <h2>Vehicles</h2>
+  <p>Vehicles linked to the case will appear here. These might include registration details, descriptions, or photos taken on-site.</p>
+  <br>
+
+  <div class="headerWithButton">
+    <h3>Vehicles</h3>
+    <div id="edit-button-container" style="text-align: right;">
+      <button class="action-btn edit" onclick="loadNote('newPOINote')" style="background-color: #21b34b; color: #fff; border: none;">
+        <span style="color: #fff; font-weight: bold; font-size: 1.2em;">＋</span> Add Vehicle
+      </button>
+    </div>
+  </div>
+
+  <table class="grid-table" style="margin-top: 10px;">
+    <thead style="background-color: #f1f3f5; color: #212529;">
+      <tr>
+        <th>Registration Number</th>
+        <th>Type of Vehicle</th>
+        <th>Make</th>
+        <th>VIN</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td colspan="5" style="text-align: center; color: #6c757d;">No vehicles recorded</td>
+      </tr>
+    </tbody>
+  </table>
 </section>
