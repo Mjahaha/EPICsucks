@@ -1,8 +1,70 @@
-<section>
-  <h2>Case Summary</h2>
-  <p>Allocated to: James P</p>
-  <p>Other officers with access</p>
-  <p>Outstanding documents</p>
-  <p>Related cases:</p>
-  <p></p>
+<section id="case-summary-section">
+  <h2>Case Summary  <span 
+  title="Open note" 
+  onclick="loadNote('caseSummaryNote')" 
+  style="cursor: pointer; font-size: 1.0em;" 
+  aria-label="Note icon" 
+  role="button">
+  🗒️
+</span></h2>
+
+
+
+  <div class="summary-meta">
+    
+    <div>
+      <strong>Date Discovered:</strong> 29 March
+    </div>
+    <div>
+      <strong>Date Reported:</strong> 1 April
+    </div>
+    <div>
+      <strong>Date Case Created:</strong> 1 April
+    </div>
+  </div>
+
+  <div class="summary-responsible">
+    <br>
+    <p><strong>Responsible Officer:</strong> James Pridgeon <span class="action-btn edit" onclick="loadPage('reallocate')">✏️ Rellocate</span></p>
+    <br>
+    <p><strong>Officers with access:</strong> All Officers <span class="action-btn edit" onclick="loadPage('accessControl')">✏️ Change access</span></p>
+  </div>
+
+  <div class="summary-docs">
+    <h4>Open documents (any Notices or Reg Actions that have not been issued or terminated)</h4>
+    <table class="grid-table">
+      <thead>
+        <tr>
+          <th>Task Name</th>
+          <th>Responsible</th>
+          <th>Date Created</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="#" class="case-link">s.191 - landfill EPL 123</a></td>
+          <td>James Pridgeon</td>
+          <td>6 April</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="summary-cases">
+    <h4>Linked Cases <span class="note">(hidden if nothing here)</span></h4>
+    <table class="grid-table">
+      <thead>
+        <tr>
+          <th>Case Number</th>
+          <th>Date Notified</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="#" class="case-link">EPA-1235 Odour</a></td>
+          <td>28 March</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </section>

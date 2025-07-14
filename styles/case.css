@@ -341,3 +341,53 @@ section #incidentDetailsSection {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
 }
 
+
+
+/* ************************************************* */
+/* Closure Tab */
+/* ************************************************* */
+
+
+#case-summary-section {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 6px;
+  margin-top: 30px;
+  font-size: 1rem;
+}
+
+.summary-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.05rem;
+  margin-top: 1.2rem;
+}
+
+.summary-responsible {
+  margin-bottom: 1.5rem;
+}
+
+.summary-responsible .edit-link {
+  margin-left: 1rem;
+  color: #007bff;
+  cursor: pointer;
+  text-decoration: underline;
+  font-size: 0.95rem;
+}
+
+.summary-docs,
+.summary-cases {
+  margin-top: 2rem;
+}
+
+.summary-docs h4,
+.summary-cases h4 {
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.note {
+  font-weight: normal;
+  font-size: 0.9rem;
+  color: #666;
+}

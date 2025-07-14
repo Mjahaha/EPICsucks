@@ -278,6 +278,12 @@ function switchTab(tabName) {
     return;
   }
 
+  // Close any open note panel
+  if (typeof closeNotePanel === "function") {
+    closeNotePanel();
+    console.log("🧼 Closed note panel due to tab switch.");
+  }
+
   const tabPath = `pages/caseTabs/${tabName}.html`;
 
   fetch(tabPath)
