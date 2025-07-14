@@ -1,10 +1,30 @@
 <section>
   <h2>Closure</h2>
   <br><br>
-  <h3>Does the case notes explain how the case was resolved?</h3><br>
+  <h3>Do the case notes explain how the case was resolved?</h3><br>
   <p>The final case note</p><br>
   <div id="final-case-note-container"></div><br><br>
 </section>
+
+  <div class="summary-docs">
+    <h3>Open documents <span class="note">(these open documents will be terminated if the closure is approved)</span></h3>
+    <table class="grid-table">
+      <thead>
+        <tr>
+          <th>Task Name</th>
+          <th>Responsible</th>
+          <th>Date Created</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="#" class="case-link" onclick="loadPage('secondaryRecord')">REG-123 - Warning Letter - EPL 123</a></td>
+          <td>James Pridgeon</td>
+          <td>12 June</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
 
 <section id="incidentDetailsSection">
@@ -13,7 +33,7 @@
   </div>
 
   <div class="field">
-    <label for="incidentType">Incident Type (T1)</label>
+    <label for="incidentType">Incident Type (T1) <span style="color: red;">*</span></label>
     <select id="incidentType" data-key="incidentType" onchange="saveDetails()">
       <option value="Air">Air</option>
       <option value="CDS">CDS</option>
@@ -31,7 +51,9 @@
   </div>
 
   <div class="field">
-    <label for="incidentSubtype">Incident Subtype (T2)</label>
+    <label for="incidentSubtype">
+      Incident Subtype (T2) <span style="color: red;">*</span>
+    </label>
     <select id="incidentSubtype" data-key="incidentSubtype" onchange="saveDetails()">
       <option value="OTHER">OTHER</option>
       <option value="GAS RELEASE">GAS RELEASE</option>
@@ -43,14 +65,14 @@
   </div>
 
   <div class="field">
-    <label for="impact">Impact (T3)</label>
+    <label for="impact">Impact (T3) <span style="color: red;">*</span></label>
     <select id="impact" data-key="impact" onchange="saveDetails()">
       <option value="Human Health">Human Health</option>
     </select>
   </div>
 
   <div class="field">
-    <label for="source">Source (T4)</label>
+    <label for="source">Source (T4) <span style="color: red;">*</span></label>
     <select id="source" data-key="source" onchange="saveDetails()">
       <option value="AGRICULTURE">AGRICULTURE</option>
       <option value="SEWAGE TREATMENT SYSTEM">SEWAGE TREATMENT SYSTEM</option>

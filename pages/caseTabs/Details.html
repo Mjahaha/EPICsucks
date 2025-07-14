@@ -1,6 +1,13 @@
 <section id="incidentDetailsSection">
   <div id="detailsTopRow">
-    <h2>Incident Details</h2>
+    <h2>Incident Details  <span 
+      title="Open note" 
+      onclick="loadNote('incidentDetailsNote')" 
+      style="cursor: pointer; font-size: 1.0em;" 
+      aria-label="Note icon" 
+      role="button">
+      🗒️
+    </span></h2>
     <div id="edit-button-container" style="text-align: right;">
       <button class="action-btn edit" onclick="enableEditMode()">✏️ Edit</button>
     </div>

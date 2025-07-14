@@ -8,22 +8,27 @@ let caseNotes = [
   {
     author: "Jane EnviroLine",
     time: "9 June 2025, 09:21",
-    text: "Created Incident"
+    text: "Case was created from an EnviroLine call. <br><br>Incident Description: <br>Report of a strong stench and air pollution out of chimney stacks. Council referred issue to EPA. Bovine Services Beef Exports, out of Bathurst. Worst smell from 2pm onwards. Caller believes that it's hotter days when the smell is present. "
   },  
   {
     author: "Ben Lewin",
     time: "9 June 2025, 12:21",
-    text: "Followed up on odour complaint. Resident reports strong chemical smell in the morning."
-  },
+    text: "Followed up on odour complaint with called. Resident reports strong chemical smell in the morning."
+  },  
   {
     author: "Ben Lewin",
+    time: "9 June 2025, 14:21",
+    text: "This case has been reallocated to <b>James Pridgeon</b>. "
+  },
+  {
+    author: "James Pridgeon",
     time: "11 June 2025, 05:21",
-    text: "Spoke to facility operator, advised they were cleaning a tank around 8 AM. Monitoring planned."
+    text: "Spoke to facility operator, advised they were cleaning a tank around 1:30 PM. I explained to him his obligation under this EPL and that he needs to take management steps to prevent reoccurance."
   },
   {
     author: "James Pridgeon",
     time: "12 June 2025, 05:21",
-    text: `A draft <b>Prevention Notice</b> was created <a href="#" class="case-link" onclick="loadPage('secondaryRecord')">SR-123</a>.`
+    text: `A draft <b>Warning Letter</b> was created <a href="#" class="case-link" onclick="loadPage('secondaryRecord')">REG-123</a>.`
   }
 ];
 
@@ -177,13 +182,13 @@ function handleAddNote() {
 
 let caseDetails = {
   operationalArea: "General Operations",
-  dateDiscovered: "2024-06-01",
-  dateReported: "2024-06-10",
-  incidentDescription: "Smoke from mine operations affecting air quality.",
+  dateDiscovered: "2024-06-08",
+  dateReported: "2024-06-09",
+  incidentDescription: "Report of a strong stench and air pollution out of chimney stacks. Council referred issue to EPA. Bovine Services Beef Exports, out of Bathurst. Worst smell from 2pm onwards. Caller believes that it's hotter days when the smell is present.",
   incidentType: "Air",
-  incidentSubtype: "SMOKE",
+  incidentSubtype: "ODOUR",
   impact: "Human Health",
-  source: "MINE"
+  source: ""
 };
 
 
@@ -299,6 +304,7 @@ function switchTab(tabName) {
       if (tabName === "Details" && typeof populateDetails === "function") {
         console.log(`🌿 Populating details for tab: ${tabName}`);
         populateDetails();
+        //loadNote('incidentDetailsNote');
       }
       if (tabName === "Closure" && typeof populateDetails === "function") {
         console.log(`🌿 Populating details for tab: ${tabName}`);
