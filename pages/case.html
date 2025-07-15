@@ -1,17 +1,23 @@
 <section>
   <div class="pageHeading">
-    <div>
-      <img src="pages/images/case.png" />
-      <h2>EPA-1234</h2>
+    <div style="display: flex;">
+      <div>
+        <img src="pages/images/case.png" />
+        <h2>EPA-1234</h2>
+      </div>
+      <div style="color: black; padding: 25px 10px 0px 40px;">
+        <p style="margin-bottom: 12px;">Responsible Officer: <b>James Pridgeon</b></p>
+        <p>Date Created: 9 June 2025 12:31pm</p>
+      </div>
     </div>
     <div class="dropdown-container">
       <button class="dropdown-button" onclick="toggleDropdown()">Actions ▼</button>
       <div class="dropdown-menu" id="actionsDropdown">
-        <div onclick="loadNote('note1')">View Audit Log</div>
-        <div onclick="loadNote('note1')">Relate Cases</div>
-        <div onclick="loadNote('note1')">Terminate Case</div>
-        <div onclick="loadNote('note2')">Clone</div>
-        <div onclick="loadNote('note3')">Refresh</div>
+        <div onclick="loadNote('otherActionsBarFunctions')">View Audit Log</div>
+        <div onclick="loadNote('relatedCase')">Relate Cases</div>
+        <div onclick="loadNote('otherActionsBarFunctions')">Terminate Case</div>
+        <div onclick="loadNote('otherActionsBarFunctions')">Clone</div>
+        <div onclick="loadNote('otherActionsBarFunctions')">Refresh</div>
       </div>
     </div>
   </div>

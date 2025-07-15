@@ -1,34 +1,50 @@
 <section>
     <div class="pageHeading">
-        <div>
-        <img src="pages/images/case.png" />
-        <h2>REG-123</h2>
+        <div style="display: flex;">
+            <div>
+                <img src="pages/images/case.png" />
+                <h2>REG-123</h2>
+            </div>
+            <div style="padding: 5px 10px 0px 40px;">
+                <p style="color: black; margin-bottom: 8px;">Responsible Officer: <b>James Pridgeon</b></p>
+                <p style="color: black; margin-bottom: 8px;">Date Created: 12 June 2025 12:31pm</p>
+                <h4>Related to: <span onclick="loadPage('case')" style="color: #0078D4; text-decoration: underline; cursor: pointer;">EPA-123</span></h4>
+            </div>
         </div>
         <div class="dropdown-container">
             <button class="dropdown-button" onclick="toggleDropdown()">Actions ▼</button>
             <div class="dropdown-menu" id="actionsDropdown">
-                <div onclick="loadNote('note1')">View Audit Log</div>
-                <div onclick="loadNote('note1')">Terminate Record</div>
-                <div onclick="loadNote('note3')">Refresh</div>
+                <div onclick="loadPage('case')">Return to Case</div>
+                <div onclick="loadNote('otherActionsBarFunctions')">View Audit Log</div>
+                <div onclick="loadNote('otherActionsBarFunctions')">Terminate Record</div>
+                <div onclick="loadNote('otherActionsBarFunctions')">Refresh</div>
             </div>
         </div>
     </div>
     <div id="case-tab-content" class="tab-content">   
         <h2>Warning Letter </h2>
         <br>
-        <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; flex-wrap: wrap; margin-bottom: 20px;">
-        <p style="flex: 1; min-width: 250px;">
-            This is a simplified example of a warning letter layout. Only essential fields are shown here, but when using this in a real case,
-            all required fields will appear based on the type of notice, document, or regulatory action selected. 🛠️
-        </p>
+        <div style="display: flex;  gap: 80px;  margin-bottom: 20px;">
+            <div style="display: block;">
+                <p style="flex: 1; min-width: 250px;">
+                    This is a simplified example of a warning letter layout. Only essential fields are shown here, but when using this in a real case,
+                    all required fields will appear based on the type of notice, document, or regulatory action selected. 🛠️
+                </p>
+                <div style="margin: 40px;">
+                    <p><strong>Responsible Officer:</strong> James Pridgeon <span class="action-btn edit" onclick="loadNote('reallocate')">✏️ Rellocate</span></p>
+                </div>        
 
-        <div style="margin-top: 4px;">
-            <button 
-            style="font-weight: bold; background-color: #0078D4; color: #fff; font-size: 1.1em; padding: 12px 20px; border: none; border-radius: 6px; cursor: pointer;"
-            onclick="loadNote('openInWord')">
-            📝 Edit in Word
-            </button>
-        </div>
+                
+            </div>                
+            <div style="margin-top: 4px;">
+                <button 
+                style="font-weight: bold; background-color: #0078D4; color: #fff; font-size: 1.1em; padding: 9px 15px; border: none; border-radius: 6px; cursor: pointer; min-width: 125px;"
+                onclick="loadNote('openInWord')">
+                📝 Edit in Word
+                </button>
+            </div>
+
+
         </div>
 
         <br>
