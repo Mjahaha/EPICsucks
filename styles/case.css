@@ -391,3 +391,45 @@ section #incidentDetailsSection {
   font-size: 0.9rem;
   color: #666;
 }
+
+/* ************************************************* */
+/* Documents Tab */
+/* ************************************************* */
+
+.notice-dropdown-toggle {
+  background-color: #21b34b;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 1em;
+  cursor: pointer;
+  display: inline-block;
+  user-select: none;
+}
+
+.notice-dropdown-menu {
+  display: none;
+  position: absolute;
+  right: -40px; /* nudged left to balance wider dropdown */
+  margin-top: 5px;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  min-width: 260px; /* bumped width for clarity */
+  overflow: hidden;
+}
+
+.notice-dropdown-menu div {
+  padding: 10px 12px;
+  padding-right: 25px;
+  cursor: pointer;
+  color: #212529;
+  transition: background-color 0.2s;
+}
+
+.notice-dropdown-menu div:hover {
+  background-color: #f1f1f1;
+}

@@ -1,19 +1,19 @@
 <section>
-    <div class="pageHeading">
-      <div>
-        <img src="pages/images/case.png" />
-        <h2>EPA-1234</h2>
+  <div class="pageHeading">
+    <div>
+      <img src="pages/images/case.png" />
+      <h2>EPA-1234</h2>
+    </div>
+    <div class="dropdown-container">
+      <button class="dropdown-button" onclick="toggleDropdown()">Actions ▼</button>
+      <div class="dropdown-menu" id="actionsDropdown">
+        <div onclick="loadNote('note1')">View Audit Log</div>
+        <div onclick="loadNote('note1')">Relate Cases</div>
+        <div onclick="loadNote('note1')">Terminate Case</div>
+        <div onclick="loadNote('note2')">Clone</div>
+        <div onclick="loadNote('note3')">Refresh</div>
       </div>
-        <div class="dropdown-container">
-          <button class="dropdown-button" onclick="toggleDropdown()">Actions ▼</button>
-          <div class="dropdown-menu" id="actionsDropdown">
-            <div onclick="loadNote('note1')">View Audit Log</div>
-            <div onclick="loadNote('note1')">Relate Cases</div>
-            <div onclick="loadNote('note1')">Terminate Case</div>
-            <div onclick="loadNote('note2')">Clone</div>
-            <div onclick="loadNote('note3')">Refresh</div>
-          </div>
-        </div>
+    </div>
   </div>
     </div>
     <div class="tab-ribbon">

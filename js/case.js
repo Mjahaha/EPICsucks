@@ -329,3 +329,16 @@ function toggleDropdown() {
   container.classList.toggle('open');
 }
 
+// ****************************************************************** //
+// Documents tab functions //
+// ****************************************************************** //
+
+function toggleDropdownById(dropdownId) {
+  const dropdown = document.getElementById(dropdownId);
+  if (!dropdown) {
+    console.warn(`💨 Dropdown with ID "${dropdownId}" not found, man.`);
+    return;
+  }
+  dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+}
+
