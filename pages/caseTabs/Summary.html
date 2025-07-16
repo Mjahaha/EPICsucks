@@ -54,7 +54,16 @@
   </div>
 
   <div class="summary-cases">
-    <h4>Linked Cases <span class="note">(hidden if nothing here)</span></h4>
+    <h4>Linked Cases <span 
+        title="Open note" 
+        onclick="loadNote('relatedCase')" 
+        style="cursor: pointer; font-size: 1.0em;" 
+        aria-label="Note icon" 
+        role="button">
+        🗒️
+      </span>
+      <span class="note">(hidden if nothing here)</span>
+    </h4>
     <table class="grid-table">
       <thead>
         <tr>
