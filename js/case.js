@@ -271,6 +271,35 @@ function handleDiscard() {
   disableEditMode();
 }
 
+// ****************************************************************** //
+// Summary tab functions //
+// ****************************************************************** //
+
+function handleTriageChange() {
+  const likelihood = parseInt(document.getElementById("likelihood").value) || 0;
+  const consequence = parseInt(document.getElementById("consequence").value) || 0;
+  const score = likelihood * consequence;
+  const resultEl = document.getElementById("triageScoreLabel");
+  const extraEl = document.getElementById("triageExtra");
+
+  if (score === 0) {
+    resultEl.textContent = "Pending";
+    extraEl.style.display = "none";
+    return;
+  }
+
+  let label = "";
+  if (score <= 6) label = `Low (${score})`;
+  else if (score <= 10) label = `Minor (${score})`;
+  else if (score <= 14) label = `Moderate (${score})`;
+  else if (score <= 20) label = `High (${score})`;
+  else label = `Critical (${score})`;
+
+  resultEl.textContent = label;
+
+  // Show extra criteria if score ≥ 11
+  extraEl.style.display = score >= 11 ? "block" : "none";
+}
 
 // ****************************************************************** //
 // Switch Tab function for tabs in cases //
@@ -309,8 +338,11 @@ function switchTab(tabName) {
       if (tabName === "Closure" && typeof populateDetails === "function") {
         console.log(`🌿 Populating details for tab: ${tabName}`);
         populateDetails();
-        renderFinalCaseNote();
-
+        renderFinalCaseNote(); handleTriageChange();
+      }
+      if (tabName === "Summary" && typeof populateDetails === "function") {
+        console.log(`🌿 Populating details for tab: ${tabName}`);
+        handleTriageChange();
       }
     })
     .catch(err => {
@@ -341,4 +373,3 @@ function toggleDropdownById(dropdownId) {
   }
   dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
 }
-
