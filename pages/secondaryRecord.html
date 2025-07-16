@@ -3,7 +3,7 @@
         <div style="display: flex;">
             <div>
                 <img src="pages/images/case.png" />
-                <h2>REG-123</h2>
+                <h2>SR-123</h2>
                 
             </div>
             <div style="padding: 5px 10px 0px 40px;">
@@ -28,13 +28,13 @@
         </div>
     </div>
     <div id="case-tab-content" class="tab-content">   
-        <h2>Warning Letter </h2>
+        <h2>s.191 Notice to provide info or records </h2>
         <br>
         <div style="display: flex;  gap: 80px;  margin-bottom: 20px;">
             <div style="display: block;">
                 <p style="flex: 1; min-width: 250px;">
-                    This is a simplified example of a warning letter layout. Only essential fields are shown here, but when using this in a real case,
-                    all required fields will appear based on the type of notice, document, or regulatory action selected. 🛠️
+                    This is an example of a s.191 layout. Only essential fields are shown here, but when using this in a real case,
+                    depending on field necessity, the required fields be included below depending on the type of notice, report, or regulatory action selected. 🛠️
                 </p>
                 <div style="margin: 40px;">
                     <p><strong>Responsible Officer:</strong> James Pridgeon <span class="action-btn edit" onclick="loadNote('reallocate')">✏️ Rellocate</span></p>
@@ -64,26 +64,84 @@
         </div>
         <table class="grid-table" style="margin-top: 10px;">
             <thead style="background-color: #f1f3f5; color: #212529;">
+                <tr>
+                    <th>Chosen Suspect</th>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Licence Number</th>
+                    <th>Address</th>
+                    <th>Related Cases</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td onclick="loadNote('switchChosenPOI')"><a href="#" style="text-decoration: none;">✅</a></td>
+                    <td>Bovine Services</td>
+                    <td>Suspect</td>
+                    <td>123</td>
+                    <td>475–479 Gestingthorpe Rd, Cow Flat Plains NSW 2782</td>
+                    <td><a href="#" class="case-link">View</a></td>
+                </tr>            
+                <tr>
+                    <td onclick="loadNote('switchChosenPOI')"><a href="#" style="text-decoration: none;">⬜</a></td>
+                    <td>Miles Angry</td>
+                    <td>Reporter</td>
+                    <td>-</td>
+                    <td>15 Spiteful Ln, Cow Flat Plains NSW 3001</td>
+                    <td><a href="#" class="case-link">View</a></td>
+                </tr>
+            </tbody>
+        </table>
+
+    <div id="noticeComplianceSection" style="margin-top: 40px;">
+        <h3>Notice Compliance</h3>
+        <br>
+        <!-- Compliance Status Dropdown -->
+        <div class="field">
+            <label for="complianceStatus">Has the notice been complied with?</label>
+            <select id="complianceStatus" data-key="complianceStatus">
+            <option value="">Select a response...</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+            <option value="partial">Partially</option>
+            <option value="not_applicable">Not Applicable</option>
+            </select>
+        </div>
+
+        <!-- Compliance Comments -->
+        <div class="field wide"><br>
+            <label for="complianceComment">Comment</label>
+            <textarea id="complianceComment" data-key="complianceComment" rows="4" placeholder="Add any notes or explanation regarding compliance..."></textarea>
+        </div>
+        <br><br>
+        <!-- File Upload Section -->
+        <div class="headerWithButton">
+            <h3>Uploaded Compliance Documents</h3>
+            <div id="edit-button-container" style="text-align: right;">
+            <button class="action-btn edit" onclick="loadNote('uploadFile')" style="background-color: #21b34b; color: #fff; border: none;">
+                <span style="color: #fff; font-weight: bold; font-size: 1.2em;">＋</span> Upload File
+            </button>
+            </div>
+        </div>
+
+        <table class="grid-table">
+            <thead>
             <tr>
-                <th>Chosen Suspect</th>
-                <th>Name</th>
-                <th>Type</th>
-                <th>Licence Number</th>
-                <th>Address</th>
-                <th>Related Cases</th>
+                <th>ID</th>
+                <th>File Name</th>
+                <th>Date Uploaded</th>
+                <th>Uploaded By</th>
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <td>✔️</td>
-                <td>Bovine Services</td>
-                <td>EPL</td>
-                <td>123</td>
-                <td>475–479 Gestingthorpe Rd, Cow Flat Plains NSW 2782</td>
-                <td><a href="#" class="case-link">View</a></td>
+            <tr>        
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
             </tr>
             </tbody>
         </table>
-    
+        </div>
     </div>
 </section>
