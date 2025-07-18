@@ -9,8 +9,12 @@ function loadComponent(id, file) {
 function loadPage(file) {
   const id = "main-content";
   const htmlPath = `pages/${file}.html`;
-  const cssPath = `styles/${file}.css`;
+  let cssPath = `styles/${file}.css`;
   const jsPath = `js/${file}.js`;
+
+  if (file == 'secondaryRecord') {
+    cssPath = `styles/case.css`;
+  }
 
   fetch(htmlPath)
     .then(res => {

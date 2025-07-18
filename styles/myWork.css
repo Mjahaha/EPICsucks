@@ -5,6 +5,18 @@ body {
     margin: 0;
 }
 
+
+.myWorkHeader {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 24px;
+  padding: 1rem 1rem 0em 1rem;
+  color: rgb(38, 49, 116);
+}
+
+/***********************************************************
+Table styles 
+************************************************************/
+
 .grid-container {
     background-color: #ffffff;
     border: 1px solid #ccc;
@@ -107,35 +119,16 @@ body {
     transform: scale(0.95);
 }
 
-.status-open {
-    color: #28a745;
-    font-weight: bold;
-}
-
-.status-pending {
-    color: #ffc107;
-    font-weight: bold;
-}
-
-.urgent-col {
-    width: 8%;
-    text-align: center;
-}
-
 .case-name-col {
     width: 24%;
-}
-
-.epa-name-col {
-    width: 14%;
 }
 
 .date-col {
     width: 12%;
 }
 
-.incident-col {
-    width: 12%;
+.triage-col {
+    width: 8%;
 }
 
 .caution-col {
@@ -143,17 +136,9 @@ body {
     text-align: center;
 }
 
-.status-col {
-    width: auto;
-}
-
 .caution-yes {
     color: #dc3545;
     font-weight: bold;
-}
-
-.caution-no {
-    color: #6c757d;
 }
 
 .pagination {
@@ -188,4 +173,41 @@ body {
     border-bottom: 1px solid #dee2e6;
     font-weight: bold;
     color: #495057;
+}
+
+
+.triage-label {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 0.95em;
+  color: #222;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+/* Specific severity colors */
+.triage-label.low {
+  background-color: #96cf5e; /* light green */
+}
+
+.triage-label.minor {
+  background-color: #fffd47; /* yellow */
+  color: black;
+  border: 3px solid black;
+}
+
+.triage-label.moderate {
+  background-color: #fcbd36; /* orange */
+}
+
+.triage-label.high {
+  background-color: #f90019; /* red */
+  color: white;
+}
+
+.triage-label.critical {
+  background-color: #6e349c; /* purple */
+  color: white;
 }

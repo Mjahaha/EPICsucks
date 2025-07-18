@@ -2,140 +2,123 @@
   <div class="pageHeading">
     <h2>My Work</h2>
   </div>
-    <p> </p>
-    <p> </p>
+  <p> </p>
+  <p> </p>
+  <h2 class="myWorkHeader">My Cases</h2>
+  <table class="grid-table">
+    <thead>
+      <tr>
+        <th class="case-name-col">
+          Case Name
+          <img src="pages/images/table_filter.PNG" alt="Filter" class="filter-icon">
+        </th>
+        <th class="triage-col">
+          Regulatory Triage Score
+          <img src="pages/images/table_filter.PNG" alt="Filter" class="filter-icon">
+        </th>
+        <th class="date-col">
+          Date Reported
+          <img src="pages/images/table_filter.PNG" alt="Filter" class="filter-icon">
+        </th>
+        <th class="date-col">
+          Due Date
+          <img src="pages/images/table_filter.PNG" alt="Filter" class="filter-icon">
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="case-name-col">
+          <a href="#" class="case-link" onclick="loadPage('case')">EPA-2852-FORESTRY</a>
+        </td>
+        <td><span class="triage-label moderate">Moderate (12)</span></td>
+        <td class="date-col">6 May 2024 - 5:12am</td>
+        <td class="date-col">17 June 2024</td>
+      </tr>
+      <tr>
+        <td class="case-name-col">
+          <a href="#" class="case-link" onclick="loadPage('case')">EPA-743-LAND DUBBO</a>
+        </td>
+        <td><span class="triage-label minor">Minor (9)</span></td>
+        <td class="date-col">16 February 2022 - 11:23am</td>
+        <td class="date-col">9 March 2022</td>
+      </tr>
+      <tr>
+        <td class="case-name-col">
+          <a href="#" class="case-link" onclick="loadPage('case')">EPA-6650-AIR BATHURST</a>
+        </td>
+        <td><span class="triage-label low">Low (4)</span></td>
+        <td class="date-col">19 June 2024 - 3:33pm</td>
+        <td class="date-col">26 June 2024</td>
+      </tr>
+      <tr>
+        <td class="case-name-col">
+          <a href="#" class="caution-yes case-link" onclick="loadPage('case')">EPA-6742-AIR PARAMATTA - (Caution Flag Present)</a>
+        </td>
+        <td><span class="triage-label critical">Critical (22)</span></td>
+        <td class="date-col">24 July 2024 - 2:43pm</td>
+        <td class="date-col">23 January 2025</td>
+      </tr>
+      <tr>
+        <td class="case-name-col">
+          <a href="#" class="case-link" onclick="loadPage('case')">EPA-628-LAND TOMERONG</a>
+        </td>
+        <td><span class="triage-label high">High (17)</span></td>
+        <td class="date-col">20 October 2021 - 6:41pm</td>
+        <td class="date-col">17 February 2022</td>
+      </tr>
+      <tr>
+        <td class="case-name-col">
+          <a href="#" class="case-link" onclick="loadPage('case')">EPA-6814-FORESTRY HERONS CREEK</a>
+        </td>
+        <td><span class="triage-label minor">Minor (8)</span></td>
+        <td class="date-col">29 August 2024 - 9:23am<</td>
+        <td class="date-col">19 September 2024/td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p> </p>
+  <h2 class="myWorkHeader">My Tasks</h2>
+    <div class="summary-docs">
+
     <table class="grid-table">
-          <thead>
-            <tr>
-            <th class="urgent-col">
-                Urgent
+      <thead>
+        <tr>
+            <th>
+                Task Name
                 <img src="pages/images/table_filter.PNG" alt="Filter" class="filter-icon">
-                
             </th>
-            <th class="case-name-col">
-                Case Name
+            <th>
+                Related Case
                 <img src="pages/images/table_filter.PNG" alt="Filter" class="filter-icon">
-                
             </th>
-            <th class="epa-name-col">
-                EPA Name
+            <th>
+                Reminder
                 <img src="pages/images/table_filter.PNG" alt="Filter" class="filter-icon">
-                
             </th>
-            <th class="date-col">
-                Date Reported
+            <th>
+                Date Created
                 <img src="pages/images/table_filter.PNG" alt="Filter" class="filter-icon">
-                
             </th>
-            <th class="incident-col">
-                Incident Level
-                <img src="pages/images/table_filter.PNG" alt="Filter" class="filter-icon">
-                
-            </th>
-            <th class="caution-col">
-                Caution Flag
-                <img src="pages/images/table_filter.PNG" alt="Filter" class="filter-icon">
-                
-            </th>
-            <th class="status-col">
-                Case Status
-                <img src="pages/images/table_filter.PNG" alt="Filter" class="filter-icon">
-                
-            </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td class="urgent-col">No</td>
-                <td class="case-name-col">
-                    <a href="#" class="case-link" onclick="loadPage('case')">EPA-2852-FORESTRY</a>
-                </td>
-                <td class="epa-name-col">-</td>
-                <td class="date-col">6/05/24 11:21 AM</td>
-                <td class="incident-col">0</td>
-                <td class="caution-col">
-                    <span class="caution-yes">Yes</span>
-                </td>
-                <td class="status-col">
-                    <span class="status-pending">Pending-Investigation</span>
-                </td>
-            </tr>
-            <tr>
-                <td class="urgent-col">No</td>
-                <td class="case-name-col">
-                    <a href="#" class="case-link" onclick="loadPage('case')">EPA-743-LAND DUBBO</a>
-                </td>
-                <td class="epa-name-col">-</td>
-                <td class="date-col">16/02/22 9:17 AM</td>
-                <td class="incident-col">Not Set</td>
-                <td class="caution-col">
-                    <span class="caution-no">No</span>
-                </td>
-                <td class="status-col">
-                    <span class="status-pending">Pending-CaseDebrief</span>
-                </td>
-            </tr>
-            <tr>
-                <td class="urgent-col">No</td>
-                <td class="case-name-col">
-                    <a href="#" class="case-link" onclick="loadPage('case')">REF-NO-6650-</a>
-                </td>
-                <td class="epa-name-col">-</td>
-                <td class="date-col">19/06/24 9:59 AM</td>
-                <td class="incident-col"></td>
-                <td class="caution-col">
-                    <span class="caution-no">No</span>
-                </td>
-                <td class="status-col">
-                    <span class="status-open">Open</span>
-                </td>
-            </tr>
-            <tr>
-                <td class="urgent-col">No</td>
-                <td class="case-name-col">
-                    <a href="#" class="case-link" onclick="loadPage('case')">REF-NO-6742-AIR</a>
-                </td>
-                <td class="epa-name-col">-</td>
-                <td class="date-col">24/07/24 1:39 PM</td>
-                <td class="incident-col"></td>
-                <td class="caution-col">
-                    <span class="caution-yes">Yes</span>
-                </td>
-                <td class="status-col">
-                    <span class="status-open">Open</span>
-                </td>
-            </tr>
-            <tr>
-                <td class="urgent-col">No</td>
-                <td class="case-name-col">
-                    <a href="#" class="case-link" onclick="loadPage('case')">EPA-628-LAND TOMERONG</a>
-                </td>
-                <td class="epa-name-col">-</td>
-                <td class="date-col">20/10/21 2:24 PM</td>
-                <td class="incident-col">Not Set</td>
-                <td class="caution-col">
-                    <span class="caution-no">No</span>
-                </td>
-                <td class="status-col">
-                    <span class="status-pending">Pending-Investigation</span>
-                </td>
-            </tr>
-            <tr>
-                <td class="urgent-col">No</td>
-                <td class="case-name-col">
-                    <a href="#" class="case-link" onclick="loadPage('case')">REF-NO-6814-FORESTRY HERONS CREEK</a>
-                </td>
-                <td class="epa-name-col">-</td>
-                <td class="date-col">29/08/24 1:15 PM</td>
-                <td class="incident-col"></td>
-                <td class="caution-col">
-                    <span class="caution-yes">Yes</span>
-                </td>
-                <td class="status-col">
-                    <span class="status-open">Open</span>
-                </td>
-            </tr>
-        </tbody>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="#" class="case-link" onclick="loadPage('secondaryRecord')">SR-123 - s.191 Notice to provide info or records - EPL 123</a></td>
+          <td><a href="#" class="case-link" onclick="loadPage('case')">EPA-2852-FORESTRY</a></td>
+          <td>None</td>
+          <td>12 June 2025</td>
+        </tr>        
+        <tr>
+          <td><a href="#" class="case-link" onclick="loadNote('addAction')">Action: Ensure s.191 is issued before 1 July</a></td>
+          <td><a href="#" class="case-link" onclick="loadPage('case')">EPA-2852-FORESTRY</a></td>
+          <td>30 June 2025</td>
+          <td>14 June 2025</td>
+        </tr>
+      </tbody>
     </table>
-    <p style="margin-top: 1000px;">You made it to the bottom!</p>
+  </div>
+
+  <p style="margin-top: 1000px;">Hello there officer! 😉</p>
 </section>
