@@ -32,55 +32,51 @@
     <p><strong>Officers with access:</strong> All Officers <span class="action-btn edit" onclick="loadNote('controlAccess')">✏️ Change access</span></p>
   </div>
 
-  
   <section id="regTriageSection" style="margin-top: 40px;">
-    <div style="display: flex; justify-content: space-between; align-items: center; background-color: #eef6ff; padding: 12px 16px; border-radius: 6px; margin-bottom: 15px;">
-      <h2 style="margin: 0;">Regulatory Triage Result – <span id="triageScoreLabel">Pending</span></h2>
-      <button 
-        class="action-btn edit" 
-        onclick="loadNote('triageExplanation')"
-        style="background-color: #007bff; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer;"
-      >
-        ✏️ Edit Triage Details
-      </button>
+    <div 
+      style="display: flex; justify-content: space-between; align-items: center; background-color: #eef6ff; padding: 12px 16px; border-radius: 6px; margin-bottom: 15px; cursor: pointer;" 
+      onclick="toggleTriageDetails()"
+    >
+      <h2 style="margin: 0; display: flex; align-items: center;">
+        <span id="triageToggleArrow" style="display: inline-block; transition: transform 0.2s ease;">▶️</span>
+        <span style="margin-left: 10px;">Regulatory Triage Result – <span id="triageScoreLabel">Pending</span></span>
+      </h2>
+
     </div>
 
-    <div style="display: flex; ">    
-      <div class="field" style="margin-right: 30px;">
-        <label for="likelihood">Likelihood of Risk <span style="color: red;">*</span></label>
-        <select id="likelihood" data-key="likelihood" onchange="handleTriageChange(); loadNote('explainTriageNote');" onfocus="loadNote('triageExplanation')">
-          <option value="1">Rare (1)</option>
-          <option value="2">Unlikely (2)</option>
-          <option value="3">Possible (3)</option>
-          <option value="4" selected>Likely (4)</option>
-          <option value="5">Almost Certain (5)</option>
-        </select>
+    <div id="triageFields" style="display: none;">
+      <div style="display: flex;">    
+        <div class="field" style="margin-right: 30px;">
+          <label for="likelihood">Likelihood of Risk <span style="color: red;">*</span></label>
+          <select id="likelihood" data-key="likelihood" onchange="handleTriageChange(); loadNote('explainTriageNote');" onfocus="loadNote('triageExplanation')">
+            <option value="1">Rare (1)</option>
+            <option value="2">Unlikely (2)</option>
+            <option value="3">Possible (3)</option>
+            <option value="4" selected>Likely (4)</option>
+            <option value="5">Almost Certain (5)</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="consequence">Consequence / Impact <span style="color: red;">*</span></label>
+          <select id="consequence" data-key="consequence" onchange="handleTriageChange(); loadNote('explainTriageNote');" onfocus="loadNote('triageExplanation')">
+            <option value="1">Negligible (1)</option>
+            <option value="2" selected>Minor (2)</option>
+            <option value="3">Moderate (3)</option>
+            <option value="4">Significant (4)</option>
+            <option value="5">Catastrophic (5)</option>
+          </select>
+        </div>
       </div>
 
-      <div class="field">
-        <label for="consequence">Consequence / Impact <span style="color: red;">*</span></label>
-        <select id="consequence" data-key="consequence" onchange="handleTriageChange(); loadNote('explainTriageNote');" onfocus="loadNote('triageExplanation')">
-          <option value="1">Negligible (1)</option>
-          <option value="2" selected>Minor (2)</option>
-          <option value="3">Moderate (3)</option>
-          <option value="4">Significant (4)</option>
-          <option value="5">Catastrophic (5)</option>
-        </select>
+      <div id="triageExtra" style="display: none; margin-top: 15px;">
+        <p style="font-size: 0.95em; background-color: #fff3cd; padding: 0px; border-left: 4px solid #ffc107; border-radius: 4px;"> 
+          <!-- elements for secondary risk evaluation, fix padding in styles above -->
+        </p>
       </div>
-    </div>
-
-
-    <div id="triageExtra" style="display: none; margin-top: 15px;">
-      <p style="font-size: 0.95em; background-color: #fff3cd; padding: 10px; border-left: 4px solid #ffc107; border-radius: 4px;">
-        👀 Because the score is 11 or higher, you should consider:<br>
-        - Frequency of occurrence<br>
-        - Sensitivity of the receiving environment<br>
-        - Public concern<br>
-        - Compliance history<br><br>
-        More info in the note opened above ☝️
-      </p>
     </div>
   </section>
+
 
   <div class="summary-docs">
     <h4>Open documents <span class="note">(any Notices or Reg Actions that have not been issued or terminated)</span></h4>

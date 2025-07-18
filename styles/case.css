@@ -433,3 +433,44 @@ section #incidentDetailsSection {
 .notice-dropdown-menu div:hover {
   background-color: #f1f1f1;
 }
+
+
+/* ************************************************* */
+/* Summary Tab */
+/* ************************************************* */
+
+.triage-label {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 0.95em;
+  color: #222;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+/* Specific severity colors */
+.triage-label.low {
+  background-color: #96cf5e; /* light green */
+}
+
+.triage-label.minor {
+  background-color: #fffd47; /* yellow */
+  color: black;
+  border: 3px solid black;
+}
+
+.triage-label.moderate {
+  background-color: #fcbd36; /* orange */
+}
+
+.triage-label.high {
+  background-color: #f90019; /* red */
+  color: white;
+}
+
+.triage-label.critical {
+  background-color: #6e349c; /* purple */
+  color: white;
+}

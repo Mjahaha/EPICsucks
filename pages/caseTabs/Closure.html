@@ -3,29 +3,75 @@
   <br><br>
   <h3>Do the case notes explain how the case was resolved?</h3><br>
   <p>The final case note</p><br>
-  <div id="final-case-note-container"></div><br><br>
+  <div id="final-case-note-container"></div>
 </section>
 
-  <div class="summary-docs">
-    <h3>Open documents <span class="note">(these open documents will be terminated if the closure is approved)</span></h3>
-    <table class="grid-table">
-      <thead>
-        <tr>
-          <th>Task Name</th>
-          <th>Responsible</th>
-          <th>Date Created</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><a href="#" class="case-link" onclick="loadPage('secondaryRecord')">REG-123 - Warning Letter - EPL 123</a></td>
-          <td>James Pridgeon</td>
-          <td>12 June</td>
-        </tr>
-      </tbody>
-    </table>
+
+<section id="regTriageSection" style="margin-top: 40px;">
+  <div 
+    style="display: flex; justify-content: space-between; align-items: center; background-color: #eef6ff; padding: 0px 16px; border-radius: 6px; margin-bottom: 15px; cursor: pointer;" 
+    onclick="toggleTriageDetails()"
+  >
+    <h2 style="margin: 0; display: flex; align-items: center;">
+      <span id="triageToggleArrow" style="display: inline-block; transition: transform 0.2s ease;">▶️</span>
+      <span style="margin-left: 10px;">Regulatory Triage Result – <span id="triageScoreLabel">Pending</span></span>
+    </h2>
+
   </div>
 
+  <div id="triageFields" style="display: none;">
+    <div style="display: flex;">    
+      <div class="field" style="margin-right: 30px;">
+        <label for="likelihood">Likelihood of Risk <span style="color: red;">*</span></label>
+        <select id="likelihood" data-key="likelihood" onchange="handleTriageChange(); loadNote('explainTriageNote');" onfocus="loadNote('triageExplanation')">
+          <option value="1">Rare (1)</option>
+          <option value="2">Unlikely (2)</option>
+          <option value="3">Possible (3)</option>
+          <option value="4" selected>Likely (4)</option>
+          <option value="5">Almost Certain (5)</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="consequence">Consequence / Impact <span style="color: red;">*</span></label>
+        <select id="consequence" data-key="consequence" onchange="handleTriageChange(); loadNote('explainTriageNote');" onfocus="loadNote('triageExplanation')">
+          <option value="1">Negligible (1)</option>
+          <option value="2" selected>Minor (2)</option>
+          <option value="3">Moderate (3)</option>
+          <option value="4">Significant (4)</option>
+          <option value="5">Catastrophic (5)</option>
+        </select>
+      </div>
+    </div>
+
+    <div id="triageExtra" style="display: none; margin-top: 15px;">
+      <p style="font-size: 0.95em; background-color: #fff3cd; padding: 0px; border-left: 4px solid #ffc107; border-radius: 4px;">
+          <!-- elements for secondary risk evaluation, fix padding in styles above -->
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<div class="summary-docs">
+  <h3>Open documents <span class="note">(these open documents will be terminated if the closure is approved)</span></h3>
+  <table class="grid-table">
+    <thead>
+      <tr>
+        <th>Task Name</th>
+        <th>Responsible</th>
+        <th>Date Created</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a href="#" class="case-link" onclick="loadPage('secondaryRecord')">SR-123 - s.191 Information or Records</a></td>
+        <td>James Pridgeon</td>
+        <td>12 June</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 <section id="incidentDetailsSection">
   <div id="detailsTopRow">

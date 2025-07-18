@@ -289,17 +289,33 @@ function handleTriageChange() {
   }
 
   let label = "";
-  if (score <= 6) label = `Low (${score})`;
-  else if (score <= 10) label = `Minor (${score})`;
-  else if (score <= 14) label = `Moderate (${score})`;
-  else if (score <= 20) label = `High (${score})`;
-  else label = `Critical (${score})`;
+  if (score <= 6) {
+    label = `<span class="triage-label low">Low (${score})</span>`;
+  } else if (score <= 10) {
+    label = `<span class="triage-label minor">Minor (${score})</span>`;
+  } else if (score <= 14) {
+    label = `<span class="triage-label moderate">Moderate (${score})</span>`;
+  } else if (score <= 20) {
+    label = `<span class="triage-label high">High (${score})</span>`;
+  } else {
+    label = `<span class="triage-label critical">Critical (${score})</span>`;
+  }
 
-  resultEl.textContent = label;
+  resultEl.innerHTML = label;
 
   // Show extra criteria if score ≥ 11
   extraEl.style.display = score >= 11 ? "block" : "none";
 }
+
+function toggleTriageDetails() {
+  const triageFields = document.getElementById('triageFields');
+  const arrow = document.getElementById('triageToggleArrow');
+
+  const isOpen = triageFields.style.display === 'block';
+  triageFields.style.display = isOpen ? 'none' : 'block';
+  arrow.textContent = isOpen ? '▶️' : '🔽';
+}
+
 
 // ****************************************************************** //
 // Switch Tab function for tabs in cases //
@@ -338,7 +354,8 @@ function switchTab(tabName) {
       if (tabName === "Closure" && typeof populateDetails === "function") {
         console.log(`🌿 Populating details for tab: ${tabName}`);
         populateDetails();
-        renderFinalCaseNote(); handleTriageChange();
+        renderFinalCaseNote(); 
+        handleTriageChange();
       }
       if (tabName === "Summary" && typeof populateDetails === "function") {
         console.log(`🌿 Populating details for tab: ${tabName}`);
