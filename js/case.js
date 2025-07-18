@@ -48,7 +48,10 @@ function renderCaseNotes() {
     noteDiv.innerHTML = `
       <div class="note-meta">
         <span class="note-author">${note.author}</span>
-        <span class="note-time">${note.time}</span>
+        <div class="note-meta-right">
+          <span class="note-time">${note.time}</span>
+          <button class="note-options" title="More options" onclick="loadNote('editSomethingNote')">⋯</button>
+        </div>
       </div>
       <div class="note-text">${note.text}</div>
     `;
@@ -56,6 +59,7 @@ function renderCaseNotes() {
     container.appendChild(noteDiv);
   });
 }
+
 
 // ➕ Add a new note
 function addCaseNote(author, text) {

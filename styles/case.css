@@ -105,9 +105,9 @@
   border-radius: 0 0 6px 6px;
 }
 
-#case-notes-section h3 {
+#case-notes-section h2 {
   margin-bottom: 15px;
-  color: #343a40;
+  color: #000000;
 }
 
 .case-note {
@@ -204,6 +204,34 @@
   transition: margin 0.6s ease;
 }
 
+.note-options {
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: #6c757d;
+  cursor: pointer;
+  margin-left: 8px;
+  padding: 0;
+  transition: color 0.2s ease;
+}
+
+.note-options:hover {
+  color: #343a40;
+}
+
+.note-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.note-meta-right {
+  display: flex;
+  align-items: flex-end;
+}
+
+
+
 /* ************************************************* */
 /* Incident Details Tab */
 /* ************************************************* */
@@ -211,6 +239,8 @@
 #detailsTopRow {
   width: 100%;
   display: inline;
+  font-size: 16px;
+
 }
 
 section #incidentDetailsSection {
@@ -344,15 +374,13 @@ section #incidentDetailsSection {
 
 
 /* ************************************************* */
-/* Closure Tab */
+/* Summary Tab */
 /* ************************************************* */
 
 
 #case-summary-section {
-  padding: 20px;
   background-color: #fff;
   border-radius: 6px;
-  margin-top: 30px;
   font-size: 1rem;
 }
 
