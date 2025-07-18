@@ -12,6 +12,34 @@ body {
   color: rgb(15, 15, 15);
 }
 
+.case-toggle-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  padding-left: 1rem;
+}
+
+.case-btn {
+  background-color: #ffffff;
+  color: rgb(0, 125, 173);
+  border: 2px solid rgb(0, 125, 173);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.case-btn:hover {
+  background-color: rgba(0, 125, 173, 0.1);
+}
+
+.case-btn.active {
+  background-color: rgb(0, 125, 173);
+  color: #ffffff;
+}
+
+
 /***********************************************************
 Table styles 
 ************************************************************/
