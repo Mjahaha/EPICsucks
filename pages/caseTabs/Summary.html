@@ -79,8 +79,9 @@
           <div style="display: flex; flex-wrap: wrap; gap: 30px; margin-top: 10px;">
 
             <div class="field">
-              <label for="frequency">Frequency of Occurrence</label>
+              <label for="frequency">Frequency of Occurrence<span style="color: red;">*</span></label>
               <select id="frequency" data-key="frequency">
+                <option value="nil">How often does this issue occur?</option>
                 <option value="low">Low – Low occurrence frequency</option>
                 <option value="medium">Medium – Occasional incidents at irregular intervals</option>
                 <option value="high">High – Frequent incidents occurring</option>
@@ -88,8 +89,9 @@
             </div>
 
             <div class="field">
-              <label for="sensitivity">Sensitivity of Environment</label>
+              <label for="sensitivity">Sensitivity of Environment<span style="color: red;">*</span></label>
               <select id="sensitivity" data-key="sensitivity">
+                <option value="nil">How sensitive is the surrounding environment?</option>
                 <option value="low">Low – Minimal impact on sensitive areas</option>
                 <option value="medium">Medium – Moderate impact on sensitive areas</option>
                 <option value="high">High – Significant impact on sensitive areas</option>
@@ -97,8 +99,9 @@
             </div>
 
             <div class="field">
-              <label for="publicConcern">Public Concern</label>
+              <label for="publicConcern">Public Concern<span style="color: red;">*</span></label>
               <select id="publicConcern" data-key="publicConcern">
+                <option value="nil">Is there a wider public concern around this issue?</option>
                 <option value="low">Low – Minimal public concern</option>
                 <option value="medium">Medium – Moderate public concern</option>
                 <option value="high">High – High public concern</option>
@@ -106,8 +109,9 @@
             </div>
 
             <div class="field">
-              <label for="complianceHistory">Compliance History</label>
+              <label for="complianceHistory">Compliance History<span style="color: red;">*</span></label>
               <select id="complianceHistory" data-key="complianceHistory">
+                <option value="nil">Is there a compliance history of any known suspect? </option>
                 <option value="low">Low – No or minor non-compliance history</option>
                 <option value="medium">Medium – Moderate history with some regulatory action</option>
                 <option value="high">High – Serious history with penalties and ongoing issues</option>
