@@ -48,7 +48,7 @@
       <div style="display: flex;">    
         <div class="field" style="margin-right: 30px;">
           <label for="likelihood">Likelihood of Risk <span style="color: red;">*</span></label>
-          <select id="likelihood" data-key="likelihood" onchange="handleTriageChange(); loadNote('explainTriageNote');" onfocus="loadNote('triageExplanation')">
+          <select id="likelihood" data-key="likelihood" onchange="handleTriageChange(); loadNote('explainTriageNote');" onfocus="loadNote('explainTriageNote')">
             <option value="1">Rare (1)</option>
             <option value="2">Unlikely (2)</option>
             <option value="3">Possible (3)</option>
@@ -59,7 +59,7 @@
 
         <div class="field">
           <label for="consequence">Consequence / Impact <span style="color: red;">*</span></label>
-          <select id="consequence" data-key="consequence" onchange="handleTriageChange(); loadNote('explainTriageNote');" onfocus="loadNote('triageExplanation')">
+          <select id="consequence" data-key="consequence" onchange="handleTriageChange(); loadNote('explainTriageNote');" onfocus="loadNote('explainTriageNote')">
             <option value="1">Negligible (1)</option>
             <option value="2" selected>Minor (2)</option>
             <option value="3">Moderate (3)</option>
@@ -79,12 +79,17 @@
 
 
   <div class="summary-docs">
-    <h4>Open documents <span class="note">(any Notices or Reg Actions that have not been issued or terminated)</span></h4>
+    <div style="display: flex; justify-content: space-between;">
+      <h3>Open Tasks <span class="note">(includes any Documents that have not been issued or terminated)</span></h3>
+      <span class="action-btn edit" onclick="loadNote('addAction')"><b style="font-size: 1.2rem;">+</b> Add Action</span>
+    </div>
+
     <table class="grid-table">
       <thead>
         <tr>
           <th>Task Name</th>
           <th>Responsible</th>
+          <th>Reminder</th>
           <th>Date Created</th>
         </tr>
       </thead>
@@ -92,14 +97,21 @@
         <tr>
           <td><a href="#" class="case-link" onclick="loadPage('secondaryRecord')">SR-123 - s.191 Notice to provide info or records - EPL 123</a></td>
           <td>James Pridgeon</td>
-          <td>12 June</td>
+          <td>None</td>
+          <td>12 June 2025</td>
+        </tr>        
+        <tr>
+          <td><a href="#" class="case-link" onclick="loadNote('addAction')">Action: Ensure s.191 is issued before 1 July</a></td>
+          <td>James Pridgeon</td>
+          <td>30 June 2025</td>
+          <td>14 June 2025</td>
         </tr>
       </tbody>
     </table>
   </div>
 
   <div class="summary-cases">
-    <h4>Linked Cases <span 
+    <h3>Linked Cases <span 
         title="Open note" 
         onclick="loadNote('relatedCase')" 
         style="cursor: pointer; font-size: 1.0em;" 
@@ -108,7 +120,7 @@
         📃
       </span>
       <span class="note">(hidden if nothing here)</span>
-    </h4>
+    </h3>
     <table class="grid-table">
       <thead>
         <tr>

@@ -58,6 +58,7 @@ function loadPage(file) {
                 }
                 if (file === "case" && typeof switchTab === "function") {
                   switchTab("Summary");
+                  toggleNotesPosition();
                 }
               };
               document.body.appendChild(script);
@@ -67,6 +68,7 @@ function loadPage(file) {
               }
               if (file === "case" && typeof switchTab === "function") {
                 switchTab("Summary");
+                toggleNotesPosition();
               }
             }
           }
