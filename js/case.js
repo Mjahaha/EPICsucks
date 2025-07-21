@@ -28,7 +28,7 @@ let caseNotes = [
   {
     author: "James Pridgeon",
     time: "12 June 2025, 05:21",
-    text: `A draft <b>s.191 Notice to provide infor or recoerds</b> was created <a href="#" class="case-link" onclick="loadPage('secondaryRecord')">SR-123</a>.`
+    text: `A draft <b>s.191 Notice to provide infor or records</b> was created <a href="#" class="case-link" onclick="loadPage('secondaryRecord')">SR-123</a>.`
   }
 ];
 

@@ -19,7 +19,6 @@
 
     <p style="margin-top: 14px;">This is a list of your EPIC Cases.</p>
   </div>
-  <div>
     <table id="myWork-Open" class="grid-table">
       <thead>
         <tr>
@@ -194,13 +193,29 @@
           <td class="date-col">17 February 2025 <b>(in 56 days)</b></td>
           <td class="date-col">20 May 2025 - 6:41pm</td>
           <td class="date-col">11 June 2025 - 12:21pm <b>(after 29 days)</b></td>
+        </tr>        
+        <tr>
+          <td class="case-name-col">
+            <a href="#" class="case-link" onclick="loadPage('case')">EPA-2843-DANGEROUS GOODS GRAFTON</a>
+          </td>
+          <td class="created-by-col"><b>EnviroLine</b></td>
+          <td><span class="triage-label low">Low (2)</span></td>
+          <td class="date-col">17 February 2025 <b>(in 56 days)</b></td>
+          <td class="date-col">20 May 2025 - 6:41pm</td>
+          <td class="date-col">11 June 2025 - 12:21pm <b>(after 29 days)</b></td>
         </tr>
       </tbody>
-    </table>
-    <img src=""
+    </table>    
+    <div style="display: flex; flex-direction: row-reverse; margin-right: 50px;">
+      <a href="#" onclick="loadNote('nextPageNote')">
+        <img src="/pages/images/next-page.png" alt="Next page of notes">
+      </a>
+    </div>
   </div>
   <p> </p>
   <p> </p>
+
+
   <div class="myWorkHeader">
     <div style="display: flex; justify-content: space-between; width: 100%;">
       <h2>My Tasks</h2>
@@ -213,9 +228,7 @@
       <div></div>
       <div></div>
     </div>
-
     <p style="margin-top: 14px;">These are EPIC tasks assigned to you, which could include open notices, inpection reports, or actions assigned to you by yourself or a team member.</p>
-
   </div>
 
   <div class="summary-docs">
@@ -275,8 +288,6 @@
           <td>30 June 2025</td>
           <td>13 July 2025</td>
         </tr>        
-
-
         <tr>
           <td>            
             <b onclick="loadPage('case'); loadNote('addAction');">Action:</b> Hey Mate can you review this notice for me quickly?
@@ -289,7 +300,14 @@
         </tr>   
       </tbody>
     </table>
+    <div style="display: flex; flex-direction: row-reverse; margin-right: 50px;">
+      <a href="#" onclick="loadNote('nextPageNote')">
+        <img src="/pages/images/next-page.png" alt="Next page of notes">
+      </a>
+    </div>
   </div>
+
+
 
   <p style="margin-top: 1000px;">Hello there officer! 😉</p>
 </section>
