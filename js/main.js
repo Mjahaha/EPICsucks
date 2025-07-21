@@ -172,3 +172,25 @@ function closeNotePanel() {
 }
 
 loadNote('welcome'); // Load the welcome note start
+
+// ****************************************************************** //
+// MyWork tables functions //
+// ****************************************************************** //
+
+const toggleMyOpenCases = () => {
+  console.log("Showing open work table");
+  document.getElementById('myWork-Open').style.display = 'table';
+  document.getElementById('myWork-Closed').style.display = 'none';
+
+  document.getElementById('btn-open').classList.add('active');
+  document.getElementById('btn-closed').classList.remove('active');
+}
+
+const toggleMyClosedCases = () => {
+  console.log("Showing closed work table");
+  document.getElementById('myWork-Open').style.display = 'none';
+  document.getElementById('myWork-Closed').style.display = 'table';
+
+  document.getElementById('btn-closed').classList.add('active');
+  document.getElementById('btn-open').classList.remove('active');
+}

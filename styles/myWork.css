@@ -216,6 +216,7 @@ Table styles
   color: #222;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   transition: all 0.3s ease;
+  border: 2px solid black;
 }
 
 /* Specific severity colors */
@@ -226,7 +227,6 @@ Table styles
 .triage-label.minor {
   background-color: #fffd47; /* yellow */
   color: black;
-  border: 3px solid black;
 }
 
 .triage-label.moderate {
